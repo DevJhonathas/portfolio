@@ -43,7 +43,7 @@ export const projects: Project[] = [
     `,
 
     category: "Aplicação Web",
-    status: "Em desenvolvimento",
+    status: "Finalizado",
 
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
 
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     `,
 
     category: "Game Development",
-    status: "Em desenvolvimento",
+    status: "Finalizado",
 
     technologies: ["Roblox Studio", "Lua", "Game Design"],
 
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     `,
 
     category: "Aplicação Web",
-    status: "Projeto pessoal",
+    status: "Finalizado",
 
     technologies: ["Vue.js", "JavaScript", "CSS"],
 
@@ -162,7 +162,107 @@ export const projects: Project[] = [
       {
         type: "video",
         src: "/images/projects/gerenciador-pacientes/demo.mp4",
-        poster: "/projects/gerenciador-pacientes/cover.png",
+        poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
+        title: "Demonstração do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/gerenciador-pacientes/telaInicial.png",
+        alt: "Página inicial do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+        alt: "Painel da aplicação Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/gerenciador-pacientes/gestao.png",
+        alt: "Calculadora de preços do Gerenciador Pacientes",
+      },
+    ],
+  },
+  {
+    slug: "MiniBlog",
+    name: "MiniBlog",
+    description:
+      "Aplicação web para gerenciamento de cadastros de pacientes, com operações CRUD e interface desenvolvida com Vue.js.",
+
+    longDescription: `
+      Projeto desenvolvido utilizando Vue.js para gerenciar cadastros
+      de pacientes através de uma interface organizada e intuitiva.
+
+      A aplicação permite realizar operações de cadastro, consulta,
+      atualização e exclusão de registros, explorando conceitos
+      fundamentais do desenvolvimento de aplicações web.
+    `,
+
+    category: "Aplicação Web",
+    status: "Finalizado",
+
+    technologies: ["Vue.js", "JavaScript", "CSS"],
+
+    initials: "MB.",
+    gradient: "linear-gradient(135deg, #453978 0%, #3111a3 100%)",
+
+    githubUrl: "https://github.com/DevJhonathas/Pacientes",
+    liveUrl: "https://cg-crud-git-master-jhonathas-projects.vercel.app/",
+
+    media: [
+      {
+        type: "video",
+        src: "/images/projects/gerenciador-pacientes/demo.mp4",
+        poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
+        title: "Demonstração do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/gerenciador-pacientes/telaInicial.png",
+        alt: "Página inicial do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+        alt: "Painel da aplicação Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/gerenciador-pacientes/gestao.png",
+        alt: "Calculadora de preços do Gerenciador Pacientes",
+      },
+    ],
+  },
+  {
+    slug: "Invest",
+    name: "Invest",
+    description:
+      "Aplicação web para gerenciamento de cadastros de pacientes, com operações CRUD e interface desenvolvida com Vue.js.",
+
+    longDescription: `
+      Projeto desenvolvido utilizando Vue.js para gerenciar cadastros
+      de pacientes através de uma interface organizada e intuitiva.
+
+      A aplicação permite realizar operações de cadastro, consulta,
+      atualização e exclusão de registros, explorando conceitos
+      fundamentais do desenvolvimento de aplicações web.
+    `,
+
+    category: "Aplicação Web",
+    status: "Em Desenvolvimento",
+
+    technologies: ["Vue.js", "JavaScript", "CSS"],
+
+    initials: "I.",
+    gradient: "linear-gradient(135deg, #6dc5a0 0%, #0004ff 100%)",
+
+    githubUrl: "https://github.com/DevJhonathas/Pacientes",
+    liveUrl: "https://cg-crud-git-master-jhonathas-projects.vercel.app/",
+
+    media: [
+      {
+        type: "video",
+        src: "/images/projects/gerenciador-pacientes/demo.mp4",
+        poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
         title: "Demonstração do Gerenciador Pacientes",
       },
       {

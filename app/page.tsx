@@ -6,6 +6,7 @@ import { About } from "@/app/components/home/About";
 import { Journey } from "@/app/components/home/Journey";
 import { TechStack } from "@/app/components/home/TechStack";
 import { Projects } from "@/app/components/home/Projects";
+import { Reveal } from "@/app/components/layout/Reveal";
 
 export default function Home() {
   return (
@@ -13,11 +14,21 @@ export default function Home() {
       <Navbar />
 
       <main>
-        <Hero />
-        <About />
-        <Journey />
-        <TechStack />
-        <Projects />
+        <Reveal>
+          <Hero />
+        </Reveal>
+        <Reveal>
+          <About />
+        </Reveal>
+        <Reveal>
+          <Journey />
+        </Reveal>
+        <Reveal>
+          <TechStack />
+        </Reveal>
+        <Reveal>
+          <Projects />
+        </Reveal>
       </main>
 
       <Footer />

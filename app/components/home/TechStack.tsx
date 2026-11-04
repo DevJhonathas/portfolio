@@ -1,9 +1,42 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Code2 } from "lucide-react";
 
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import Image from "next/image";
+import {
+  ChevronDown,
+  Code2,
+  Palette,
+  GitBranch,
+  Send,
+  Network,
+  PenTool,
+  Terminal,
+  Database
+} from "lucide-react";
+
+import {
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiVuedotjs,
+  SiNestjs,
+  SiNodedotjs,
+  SiHtml5,
+  SiTailwindcss,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiRedis,
+  SiFirebase,
+  SiDocker,
+  SiGithub,
+  SiPython,
+  SiVercel,
+} from "@icons-pack/react-simple-icons";
+import { DiAws } from "react-icons/di";
 interface Technology {
   name: string;
   description: string;
@@ -72,6 +105,11 @@ const categories: Category[] = [
         name: "CSS",
         description:
           "Linguagem de estilização utilizada para definir cores, layouts, espaçamentos, animações e responsividade de páginas web.",
+      },
+      {
+        name: "Python",
+        description:
+          "Linguagem de programação versátil, utilizada no desenvolvimento de aplicações, automações, scripts e processamento de dados.",
       },
     ],
   },
@@ -158,9 +196,117 @@ const categories: Category[] = [
         description:
           "IDE da JetBrains com recursos avançados de desenvolvimento, especialmente para projetos Java e outras linguagens.",
       },
+      {
+        name: "AWS",
+        description:
+          "Plataforma de computação em nuvem da Amazon, oferecendo serviços de hospedagem, armazenamento, banco de dados e infraestrutura.",
+      },
+      {
+        name: "Vercel",
+        description:
+          "Plataforma de hospedagem e implantação de aplicações web, com integração com GitHub e otimizações para projetos como Next.js.",
+      },
+    ],
+  },
+  {
+    name: "Sistemas e Infraestrutura",
+    technologies: [
+      {
+        name: "Arch Linux",
+        description:
+          "Distribuição Linux independente e altamente personalizável, conhecida pelo modelo rolling release e pela filosofia de simplicidade e controle do sistema.",
+      },
+      {
+        name: "Fedora Server",
+        description:
+          "Distribuição Linux voltada para ambientes de servidores, oferecendo tecnologias modernas para hospedagem, administração e gerenciamento de serviços.",
+      },
+      {
+        name: "Debian",
+        description:
+          "Distribuição GNU/Linux conhecida por sua estabilidade, segurança e ampla utilização em servidores e ambientes desktop.",
+      },
+      {
+        name: "Linux Mint",
+        description:
+          "Distribuição Linux baseada em Ubuntu e Debian, focada em facilidade de uso, estabilidade e uma experiência desktop acessível.",
+      },
+      {
+        name: "Armbian",
+        description:
+          "Sistema operacional baseado em Debian e Ubuntu, otimizado para computadores de placa única com arquitetura ARM, como Orange Pi.",
+      },
+      {
+        name: "Pi-hole",
+        description:
+          "Ferramenta de filtragem DNS que bloqueia anúncios, rastreadores e domínios indesejados em toda a rede local.",
+      },
+      {
+        name: "Unbound",
+        description:
+          "Resolvedor DNS recursivo e validador DNSSEC, utilizado para realizar consultas diretamente à infraestrutura DNS.",
+      },
+      {
+        name: "Nginx",
+        description:
+          "Servidor web de alto desempenho utilizado para disponibilizar aplicações, atuar como proxy reverso, balanceador de carga e gerenciar conexões HTTP.",
+      },
+      {
+        name: "WireGuard",
+        description:
+          "Solução moderna de VPN que permite criar redes privadas e túneis seguros de comunicação entre dispositivos e servidores.",
+      },
     ],
   },
 ];
+
+const technologyIcons: Record<string, ReactNode> = {
+  // Stack
+  JavaScript: <SiJavascript size={18} color="#F7DF1E" />,
+  Java: <Image src="/images/svg/java.svg" alt="" width={20} height={20} />,
+  TypeScript: <SiTypescript size={18} color="#3178C6" />,
+  React: <SiReact size={18} color="#61DAFB" />,
+  "Next.js": <SiNextdotjs size={18} color="var(--foreground)" />,
+  "Vue.js": <SiVuedotjs size={18} color="#42B883" />,
+  "Nest.js": <SiNestjs size={18} color="#E0234E" />,
+  "Node.js": <SiNodedotjs size={18} color="#5FA04E" />,
+  HTML: <SiHtml5 size={18} color="#E34F26" />,
+  "Tailwind CSS": <SiTailwindcss size={18} color="#06B6D4" />,
+  CSS: <Image src="/images/svg/css.svg" alt="" width={20} height={20} />,
+
+  // Banco de Dados
+  PostgreSQL: <SiPostgresql size={18} color="#4479A1" />,
+  MySQL: <SiMysql size={18} color="#4479A1" />,
+  MongoDB: <SiMongodb size={18} color="#47A248" />,
+  Redis: <SiRedis size={18} color="#FF4438" />,
+  Firebase: <Image src="/images/svg/firebase.svg" alt="" width={20} height={20} />,
+  "Microsoft SQL Server": <Image src="/images/svg/microsoft-sql-server.svg" alt="" width={20} height={20} />,
+  Oracle: <Image src="/images/svg/oracle.svg" alt="" width={20} height={20} />,
+
+  // Ferramentas
+  Docker: <SiDocker size={18} color="#2496ED" />,
+  GitHub: <SiGithub size={18} color="var(--foreground)" />,
+  Vercel: <SiVercel size={18} color="var(--foreground)" />,
+  Python: <SiPython size={18} color="#3776AB" />,
+  GitLab: <Image src="/images/svg/gitlab.svg" alt="" width={20} height={20} />, 
+  Postman: <Image src="/images/svg/postman.svg" alt="" width={20} height={20} />,
+  Bruno: <Image src="/images/svg/bruno.svg" alt="" width={20} height={20} />,
+  Figma: <Image src="/images/svg/figma.svg" alt="" width={20} height={20} />,
+  "Visual Studio Code": <Image src="/images/svg/visual-studio-code.svg" alt="" width={20} height={20} />,
+  "IntelliJ IDEA": <Terminal size={18} />,
+  AWS: <Image src="/images/svg/aws.svg" alt="" width={20} height={20} />,
+
+  //Sistemas e infra
+  "Arch Linux": <Image src="/images/svg/arch-linux.svg" alt="" width={20} height={20} />,
+  Debian: <Image src="/images/svg/debian.svg" alt="" width={20} height={20} />,
+  "Fedora Server": <Image src="/images/svg/fedora.svg" alt="" width={20} height={20} />,
+  "Linux Mint": <Image src="/images/svg/linux-mint.svg" alt="" width={20} height={20} />,
+  Armbian: <Image src="/images/svg/armbian.webp" alt="" width={20} height={20} />,
+  "Pi-hole": <Image src="/images/svg/pi-hole.svg" alt="" width={20} height={20} />,
+  Unbound: <Image src="/images/svg/unbound.svg" alt="" width={20} height={20} />,
+  WireGuard: <Image src="/images/svg/wireguard.svg" alt="" width={20} height={20} />,
+  Nginx: <Image src="/images/svg/nginx.svg" alt="" width={20} height={20} />,
+};
 
 export function TechStack() {
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
@@ -238,11 +384,14 @@ export function TechStack() {
                             : "border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:border-[var(--primary)] hover:text-[var(--primary)]"
                         }`}
                       >
-                        {tech.name}
+                        <span className="flex items-center gap-2">
+                          {technologyIcons[tech.name] ?? <Code2 size={18} />}
+                          <span>{tech.name}</span>
+                        </span>
 
                         <ChevronDown
                           size={14}
-                          className={`transition-transform duration-300 ${
+                          className={`shrink-0 transition-transform duration-300 ${
                             isSelected ? "rotate-180" : ""
                           }`}
                         />
