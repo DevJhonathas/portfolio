@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #10101b;
+  --surface: #191929;
+  --surface-hover: #222238;
+
+  --foreground: #f4f2ff;
+  --muted: #a5a1bb;
+
+  --primary: #a99afb;
+  --primary-hover: #8875ee;
+
+  --border: rgba(255, 255, 255, 0.09);
+
+  --button-bg: #a99afb;
+  --button-hover: #b9adff;
+  --button-text: #151224;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --background: #f7f6fb;
+  --surface: #ffffff;
+  --surface-hover: #eeecf7;
+
+  --foreground: #25233a;
+  --muted: #777388;
+
+  --primary: #7965d5;
+  --primary-hover: #6651c2;
+
+  --border: rgba(40, 35, 70, 0.12);
+
+  --button-bg: #7965d5;
+  --button-hover: #6651c2;
+  --button-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Theme Toggle */
+
+.theme-toggle-sun {
+  display: block;
+}
+
+.theme-toggle-moon {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle-sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle-moon {
+  display: block;
+}
