@@ -1,19 +1,11 @@
-
 "use client";
-
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import {
   ChevronDown,
   Code2,
-  Palette,
-  GitBranch,
-  Send,
-  Network,
-  PenTool,
   Terminal,
-  Database
 } from "lucide-react";
 
 import {
@@ -30,13 +22,10 @@ import {
   SiMysql,
   SiMongodb,
   SiRedis,
-  SiFirebase,
   SiDocker,
   SiGithub,
-  SiPython,
   SiVercel,
 } from "@icons-pack/react-simple-icons";
-import { DiAws } from "react-icons/di";
 interface Technology {
   name: string;
   description: string;
@@ -287,7 +276,7 @@ const technologyIcons: Record<string, ReactNode> = {
   Docker: <SiDocker size={18} color="#2496ED" />,
   GitHub: <SiGithub size={18} color="var(--foreground)" />,
   Vercel: <SiVercel size={18} color="var(--foreground)" />,
-  Python: <SiPython size={18} color="#3776AB" />,
+  Python: <Image src="/images/svg/python.svg" alt="" width={25} height={25} />,
   GitLab: <Image src="/images/svg/gitlab.svg" alt="" width={20} height={20} />, 
   Postman: <Image src="/images/svg/postman.svg" alt="" width={20} height={20} />,
   Bruno: <Image src="/images/svg/bruno.svg" alt="" width={20} height={20} />,

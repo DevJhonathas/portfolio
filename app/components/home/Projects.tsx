@@ -3,9 +3,8 @@ import { ProjectCard } from "./ProjectCard";
 
 export function Projects() {
   return (
-    <section id="projetos" className="scroll-mt-32 py-15">
+    <section id="projetos" className="scroll-mt-32 py-8">
       <div className="mx-auto max-w-6xl px-5">
-
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
 
           <div>

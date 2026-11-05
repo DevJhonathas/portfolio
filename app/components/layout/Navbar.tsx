@@ -8,9 +8,10 @@ import { ScrollLink } from "./ScrollLink";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
-  { label: "Sobre mim", href: "#sobre" },
-  { label: "Tecnologias", href: "#tecnologias" },
   { label: "Projetos", href: "#projetos" },
+  { label: "Sobre mim", href: "#sobre" },
+  { label: "Experiência", href: "#formacao" },
+  { label: "Tecnologias", href: "#tecnologias" },
 ] as const;
 
 export function Navbar() {

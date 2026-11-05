@@ -22,9 +22,9 @@ export function About() {
                 Um pouco sobre minha trajetória
               </h3>
 
-              <p className="whitespace-pre-line text-base leading-8 text-[var(--muted)]">
+              <div  className="whitespace-pre-line text-base leading-8 text-[var(--muted)]">
                 {profile.about}
-              </p>
+              </div >
             </div>
           </div>
         </div>

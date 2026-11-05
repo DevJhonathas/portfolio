@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/app/data/projects";
+import Image from "next/image";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,27 +13,27 @@ export function ProjectCard({ project }: ProjectCardProps) {
       href={`/projetos/${project.slug}`}
       className="group overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition duration-300 hover:-translate-y-1 hover:border-[var(--primary)]"
     >
-      {/* Preview do projeto */}
-      <div
-        className="relative flex aspect-[16/10] items-center justify-center overflow-hidden"
-        style={{ background: project.gradient }}
-      >
-        <span className="text-7xl font-bold tracking-tighter text-white/80 transition duration-500 group-hover:scale-110">
-          {project.initials}
-        </span>
+      <div className="group/image relative aspect-[16/10] w-full overflow-hidden bg-[var(--surface-hover)]">
 
-        <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-black/20 px-3 py-1 text-xs text-white backdrop-blur-md">
+        <Image
+          src={project.cover}
+          alt={project.coverAlt}
+          fill
+          unoptimized
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+          className="object-cover transition-transform duration-500 group-hover/image:scale-105"
+        />
+
+        <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-black/60 px-3 py-1 text-xs text-white backdrop-blur-md">
           {project.category}
         </span>
 
-        <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white opacity-0 transition group-hover:opacity-100">
+        <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white opacity-0 backdrop-blur-md transition group-hover/image:opacity-100">
           <ArrowUpRight size={19} />
         </div>
+
       </div>
-
-      {/* Informações */}
       <div className="p-6">
-
         <div className="flex items-center justify-between gap-3">
           <h3 className="text-lg font-semibold transition group-hover:text-[var(--primary)]">
             {project.name}
@@ -64,7 +65,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.status}
           </span>
         </div>
-
       </div>
     </Link>
   );
