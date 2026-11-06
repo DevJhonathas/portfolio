@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import {
@@ -26,228 +29,8 @@ import {
   SiGithub,
   SiVercel,
 } from "@icons-pack/react-simple-icons";
-interface Technology {
-  name: string;
-  description: string;
-}
 
-interface Category {
-  name: string;
-  technologies: Technology[];
-}
-
-const categories: Category[] = [
-  {
-    name: "Stack",
-    technologies: [
-      {
-        name: "JavaScript",
-        description:
-          "Linguagem de programação utilizada no desenvolvimento de aplicações web interativas, tanto no frontend quanto no backend.",
-      },
-      {
-        name: "TypeScript",
-        description:
-          "Superset do JavaScript que adiciona tipagem estática, facilitando a organização, manutenção e identificação de erros no código.",
-      },
-      {
-        name: "Java",
-        description:
-          "Linguagem de programação orientada a objetos, utilizada principalmente no desenvolvimento de aplicações robustas e sistemas backend.",
-      },
-      {
-        name: "React",
-        description:
-          "Biblioteca JavaScript para construção de interfaces utilizando componentes reutilizáveis e gerenciamento de estados.",
-      },
-      {
-        name: "Next.js",
-        description:
-          "Framework baseado em React que oferece recursos como App Router, renderização no servidor, geração estática e otimização de aplicações web.",
-      },
-      {
-        name: "Vue.js",
-        description:
-          "Framework JavaScript progressivo para criação de interfaces e aplicações web utilizando componentes reativos.",
-      },
-      {
-        name: "Nest.js",
-        description:
-          "Framework Node.js para construção de aplicações backend organizadas, escaláveis e geralmente desenvolvidas com TypeScript.",
-      },
-      {
-        name: "Node.js",
-        description:
-          "Ambiente de execução JavaScript que permite desenvolver aplicações e serviços no lado do servidor.",
-      },
-      {
-        name: "HTML",
-        description:
-          "Linguagem de marcação responsável por estruturar o conteúdo e os elementos de uma página web.",
-      },
-      {
-        name: "Tailwind CSS",
-        description:
-          "Framework CSS baseado em classes utilitárias, permitindo desenvolver interfaces diretamente no HTML ou JSX.",
-      },
-      {
-        name: "CSS",
-        description:
-          "Linguagem de estilização utilizada para definir cores, layouts, espaçamentos, animações e responsividade de páginas web.",
-      },
-      {
-        name: "Python",
-        description:
-          "Linguagem de programação versátil, utilizada no desenvolvimento de aplicações, automações, scripts e processamento de dados.",
-      },
-    ],
-  },
-  {
-    name: "Banco de Dados",
-    technologies: [
-      {
-        name: "PostgreSQL",
-        description:
-          "Sistema gerenciador de banco de dados relacional e open source, conhecido por sua robustez e suporte a recursos avançados de SQL.",
-      },
-      {
-        name: "MySQL",
-        description:
-          "Sistema gerenciador de banco de dados relacional bastante utilizado em aplicações web e sistemas que trabalham com SQL.",
-      },
-      {
-        name: "Microsoft SQL Server",
-        description:
-          "Sistema gerenciador de banco de dados relacional desenvolvido pela Microsoft, utilizado em aplicações corporativas.",
-      },
-      {
-        name: "MongoDB",
-        description:
-          "Banco de dados NoSQL orientado a documentos, que armazena informações em estruturas flexíveis semelhantes ao JSON.",
-      },
-      {
-        name: "Redis",
-        description:
-          "Armazenamento de estruturas de dados em memória, frequentemente utilizado para cache, gerenciamento de sessões e processamento rápido.",
-      },
-      {
-        name: "Firebase",
-        description:
-          "Plataforma do Google que oferece serviços para aplicações, incluindo autenticação, banco de dados e hospedagem.",
-      },
-      {
-        name: "Oracle",
-        description:
-          "Sistema gerenciador de banco de dados relacional utilizado principalmente em ambientes corporativos e aplicações de grande porte.",
-      },
-    ],
-  },
-  {
-    name: "Ferramentas",
-    technologies: [
-      {
-        name: "Docker",
-        description:
-          "Plataforma de containerização que permite empacotar aplicações e suas dependências em ambientes isolados e reproduzíveis.",
-      },
-      {
-        name: "GitHub",
-        description:
-          "Plataforma de hospedagem de repositórios Git, colaboração entre desenvolvedores e gerenciamento de projetos.",
-      },
-      {
-        name: "GitLab",
-        description:
-          "Plataforma de desenvolvimento colaborativo que oferece gerenciamento de repositórios, integração e entrega contínuas.",
-      },
-      {
-        name: "Postman",
-        description:
-          "Ferramenta utilizada para realizar, testar e documentar requisições HTTP e APIs.",
-      },
-      {
-        name: "Bruno",
-        description:
-          "Cliente de API utilizado para criar, organizar e executar requisições HTTP, mantendo coleções de forma local.",
-      },
-      {
-        name: "Figma",
-        description:
-          "Ferramenta de design de interfaces e prototipação, utilizada para criar e organizar experiências visuais.",
-      },
-      {
-        name: "Visual Studio Code",
-        description:
-          "Editor de código-fonte extensível, com suporte a diversas linguagens, ferramentas e extensões para desenvolvimento.",
-      },
-      {
-        name: "IntelliJ IDEA",
-        description:
-          "IDE da JetBrains com recursos avançados de desenvolvimento, especialmente para projetos Java e outras linguagens.",
-      },
-      {
-        name: "AWS",
-        description:
-          "Plataforma de computação em nuvem da Amazon, oferecendo serviços de hospedagem, armazenamento, banco de dados e infraestrutura.",
-      },
-      {
-        name: "Vercel",
-        description:
-          "Plataforma de hospedagem e implantação de aplicações web, com integração com GitHub e otimizações para projetos como Next.js.",
-      },
-    ],
-  },
-  {
-    name: "Sistemas e Infraestrutura",
-    technologies: [
-      {
-        name: "Arch Linux",
-        description:
-          "Distribuição Linux independente e altamente personalizável, conhecida pelo modelo rolling release e pela filosofia de simplicidade e controle do sistema.",
-      },
-      {
-        name: "Fedora Server",
-        description:
-          "Distribuição Linux voltada para ambientes de servidores, oferecendo tecnologias modernas para hospedagem, administração e gerenciamento de serviços.",
-      },
-      {
-        name: "Debian",
-        description:
-          "Distribuição GNU/Linux conhecida por sua estabilidade, segurança e ampla utilização em servidores e ambientes desktop.",
-      },
-      {
-        name: "Linux Mint",
-        description:
-          "Distribuição Linux baseada em Ubuntu e Debian, focada em facilidade de uso, estabilidade e uma experiência desktop acessível.",
-      },
-      {
-        name: "Armbian",
-        description:
-          "Sistema operacional baseado em Debian e Ubuntu, otimizado para computadores de placa única com arquitetura ARM, como Orange Pi.",
-      },
-      {
-        name: "Pi-hole",
-        description:
-          "Ferramenta de filtragem DNS que bloqueia anúncios, rastreadores e domínios indesejados em toda a rede local.",
-      },
-      {
-        name: "Unbound",
-        description:
-          "Resolvedor DNS recursivo e validador DNSSEC, utilizado para realizar consultas diretamente à infraestrutura DNS.",
-      },
-      {
-        name: "Nginx",
-        description:
-          "Servidor web de alto desempenho utilizado para disponibilizar aplicações, atuar como proxy reverso, balanceador de carga e gerenciar conexões HTTP.",
-      },
-      {
-        name: "WireGuard",
-        description:
-          "Solução moderna de VPN que permite criar redes privadas e túneis seguros de comunicação entre dispositivos e servidores.",
-      },
-    ],
-  },
-];
+import { categories, projectSlugs } from "../../data/stacks";
 
 const technologyIcons: Record<string, ReactNode> = {
   // Stack
@@ -422,15 +205,80 @@ export function TechStack() {
                       <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
                         {selectedTechnology?.description}
                       </p>
+
+                      {selectedTechnology?.projectUses &&
+                        selectedTechnology.projectUses.length > 0 && (
+                          <div className="mt-5 border-t border-[var(--border)] pt-4">
+                            <h5 className="text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
+                              Onde utilizei
+                            </h5>
+                            <div className="mt-3 space-y-3">
+                              {selectedTechnology?.projectUses.map((usage, index) => {
+                                const href =
+                                  usage.slug && projectSlugs.has(usage.slug)
+                                    ? `/projetos/${usage.slug}`
+                                    : null;
+
+                                const cardContent = (
+                                  <>
+                                    <div className="flex items-center justify-between gap-3">
+                                      <span
+                                        className={`text-sm font-semibold ${
+                                          href ? "group-hover/use:text-[var(--primary)]" : ""
+                                        }`}
+                                      >
+                                        {usage.name}
+                                      </span>
+
+                                      {href && (
+                                        <ArrowUpRight
+                                          size={17}
+                                          className="shrink-0 text-[var(--muted)] transition group-hover/use:-translate-y-0.5 group-hover/use:translate-x-0.5 group-hover/use:text-[var(--primary)]"
+                                        />
+                                      )}
+                                    </div>
+
+                                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                                      {usage.usage}
+                                    </p>
+
+                                    {href && (
+                                      <span className="mt-3 inline-block text-xs font-medium text-[var(--primary)]">
+                                        Conhecer projeto →
+                                      </span>
+                                    )}
+                                  </>
+                                );
+
+                                const key = `${usage.slug ?? "sem-link"}-${usage.name}-${index}`;
+
+                                return href ? (
+                                  <Link
+                                    key={key}
+                                    href={href}
+                                    className="group/use block rounded-lg border border-[var(--border)] bg-[var(--background)] p-4 transition hover:border-[var(--primary)]"
+                                  >
+                                    {cardContent}
+                                  </Link>
+                                ) : (
+                                  <div
+                                    key={key}
+                                    className="block rounded-lg border border-[var(--border)] bg-[var(--background)] p-4"
+                                  >
+                                    {cardContent}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
                     </div>
                   </div>
                 </div>
-                
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

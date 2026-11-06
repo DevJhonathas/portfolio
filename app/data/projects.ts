@@ -353,7 +353,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "Invest",
+    slug: "invest",
     name: "Invest",
     description:
       "Aplicação web para gerenciamento de cadastros de pacientes, com operações CRUD e interface desenvolvida com Vue.js.",
