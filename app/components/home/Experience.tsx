@@ -29,9 +29,7 @@ export function Experience() {
           </p>
         </div>
 
-        {/* Grid principal com stretch para igualar alturas */}
-        <div className="grid gap-5 lg:grid-cols-2 items-stretch">
-          {/* Card Esquerdo: Experiência Profissional */}
+        <div className="space-y-5">   
           <article className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-7 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3">
@@ -69,19 +67,29 @@ export function Experience() {
               </div>
               <div className="mt-6 border-t border-[var(--border)] pt-5">
                 <h4 className="text-sm font-semibold">
-                  Principais atividades
+                  Principais contribuições e resultados
                 </h4>
-                <ul className="mt-4 space-y-3">
-                  {experience.responsibilities.map((item) => (
+
+                <ul className="mt-4 space-y-4">
+                  {experience.results.map((item) => (
                     <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm leading-6 text-[var(--muted)]"
+                      key={item.title}
+                      className="flex items-start gap-3 text-sm leading-6"
                     >
                       <CheckCircle2
                         size={17}
                         className="mt-1 shrink-0 text-[var(--primary)]"
                       />
-                      {item}
+
+                      <div>
+                        <h5 className="font-semibold text-[var(--foreground)]">
+                          {item.title}
+                        </h5>
+
+                        <p className="mt-1 text-[var(--muted)]">
+                          {item.description}
+                        </p>
+                      </div>
                     </li>
                   ))}
                 </ul>
@@ -108,86 +116,91 @@ export function Experience() {
             )}
           </article>
 
-          {/* Coluna Direita: Empilha os dois cards e divide 50/50 no desktop via grid-rows-2 */}
-          <div className="flex flex-col gap-5 lg:grid lg:grid-rows-2">
-            <article className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-7 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--primary)]/10">
-                    <GraduationCap
-                      size={23}
-                      className="text-[var(--primary)]"
-                    />
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
-                    Formação acadêmica
-                  </span>
+        <div className="grid gap-5 md:grid-cols-2 items-stretch">
+          <article className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-7 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--primary)]/10">
+                  <GraduationCap
+                    size={23}
+                    className="text-[var(--primary)]"
+                  />
                 </div>
-                <h3 className="mt-5 text-lg font-semibold">
-                  {education.degree}
-                </h3>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {education.institution}
-                </p>
-                <p className="mt-1 text-sm text-[var(--muted)]">
-                  {education.location}
-                </p>
-              </div>
-              <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--border)] pt-4">
-                <span className="text-xs text-[var(--muted)]">
-                  {education.period}
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-3 py-1.5 text-xs font-medium text-green-600 dark:text-green-400">
-                  <CheckCircle2 size={13} />
-                  {education.status}
-                </span>
-              </div>
-            </article>
 
-            <article className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-7 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--primary)]/10">
-                    <Languages
-                      size={22}
-                      className="text-[var(--primary)]"
-                    />
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
-                    Idiomas
-                  </span>
-                </div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
+                  Formação acadêmica
+                </span>
               </div>
-              <div className="my-auto space-y-4 py-2">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="font-semibold">Inglês</h3>
-                    <p className="mt-1 text-sm text-[var(--muted)]">
-                      Cambridge Assessment
-                    </p>
-                  </div>
-                  <span className="rounded-lg border border-[var(--primary)]/30 bg-[var(--primary)]/10 px-3 py-2 text-sm font-semibold text-[var(--primary)]">
-                    B2
-                  </span>
-                </div>
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="font-semibold">Francês</h3>
-                    <p className="mt-1 text-sm text-[var(--muted)]">
-                      Estudando
-                    </p>
-                  </div>
-                  <span className="rounded-lg border border-[var(--primary)]/30 bg-[var(--primary)]/10 px-3 py-2 text-sm font-semibold text-[var(--primary)]">
-                    A2
-                  </span>
-                </div>
+
+              <h3 className="mt-5 text-lg font-semibold">
+                {education.degree}
+              </h3>
+
+              <p className="mt-2 text-sm text-[var(--muted)]">
+                {education.institution}
+              </p>
+
+              <p className="mt-1 text-sm text-[var(--muted)]">
+                {education.location}
+              </p>
+            </div>
+
+            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--border)] pt-4">
+              <span className="text-xs text-[var(--muted)]">
+                {education.period}
+              </span>
+
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-3 py-1.5 text-xs font-medium text-green-600 dark:text-green-400">
+                <CheckCircle2 size={13} />
+                {education.status}
+              </span>
+            </div>
+          </article>
+
+          <article className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-7 flex flex-col">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--primary)]/10">
+                <Languages
+                  size={22}
+                  className="text-[var(--primary)]"
+                />
               </div>
-              <div /> {/* Espaçador invisível para manter o alinhamento com justify-between */}
-            </article>
-          </div>
+
+              <span className="text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
+                Idiomas
+              </span>
+            </div>
+
+            <div className="my-auto space-y-5 py-5">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <h3 className="font-semibold">Inglês</h3>
+                  <p className="mt-1 text-sm text-[var(--muted)]">
+                    Cambridge Assessment
+                  </p>
+                </div>
+
+                <span className="rounded-lg border border-[var(--primary)]/30 bg-[var(--primary)]/10 px-3 py-2 text-sm font-semibold text-[var(--primary)]">
+                  B2
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <h3 className="font-semibold">Francês</h3>
+                  <p className="mt-1 text-sm text-[var(--muted)]">
+                    Estudando
+                  </p>
+                </div>
+
+                <span className="rounded-lg border border-[var(--primary)]/30 bg-[var(--primary)]/10 px-3 py-2 text-sm font-semibold text-[var(--primary)]">
+                  A2
+                </span>
+              </div>
+            </div>
+          </article>
         </div>
 
-        {/* Cursos complementares */}
         <article className="mt-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-7">
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--primary)]/10">
@@ -263,6 +276,7 @@ export function Experience() {
             </span>
           </div>
         </article>
+        </div>
       </div>
     </section>
   );

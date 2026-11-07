@@ -31,11 +31,11 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 import { categories, projectSlugs } from "../../data/stacks";
+import { projects } from "../../data/projects";
 
 const technologyIcons: Record<string, ReactNode> = {
   // Stack
   JavaScript: <SiJavascript size={18} color="#F7DF1E" />,
-  Java: <Image src="/images/svg/java.svg" alt="" width={20} height={20} />,
   TypeScript: <SiTypescript size={18} color="#3178C6" />,
   React: <SiReact size={18} color="#61DAFB" />,
   "Next.js": <SiNextdotjs size={18} color="var(--foreground)" />,
@@ -44,6 +44,7 @@ const technologyIcons: Record<string, ReactNode> = {
   "Node.js": <SiNodedotjs size={18} color="#5FA04E" />,
   HTML: <SiHtml5 size={18} color="#E34F26" />,
   "Tailwind CSS": <SiTailwindcss size={18} color="#06B6D4" />,
+  Java: <Image src="/images/svg/java.svg" alt="" width={20} height={20} />,
   CSS: <Image src="/images/svg/css.svg" alt="" width={20} height={20} />,
 
   // Banco de Dados
@@ -69,6 +70,7 @@ const technologyIcons: Record<string, ReactNode> = {
   AWS: <Image src="/images/svg/aws.svg" alt="" width={20} height={20} />,
 
   //Sistemas e infra
+  Linux: <Image src="/images/svg/linux.svg" alt="" width={20} height={20} />,
   "Arch Linux": <Image src="/images/svg/arch-linux.svg" alt="" width={20} height={20} />,
   Debian: <Image src="/images/svg/debian.svg" alt="" width={20} height={20} />,
   "Fedora Server": <Image src="/images/svg/fedora.svg" alt="" width={20} height={20} />,
@@ -219,35 +221,61 @@ export function TechStack() {
                                     ? `/projetos/${usage.slug}`
                                     : null;
 
+                                const relatedProject = usage.slug
+                                    ? projects.find((project) => project.slug === usage.slug)
+                                    : undefined;
+
                                 const cardContent = (
-                                  <>
-                                    <div className="flex items-center justify-between gap-3">
-                                      <span
-                                        className={`text-sm font-semibold ${
-                                          href ? "group-hover/use:text-[var(--primary)]" : ""
-                                        }`}
-                                      >
-                                        {usage.name}
-                                      </span>
+                                  <div className="flex items-start gap-3 sm:gap-4">
+                                    {relatedProject?.cover && (
+                                      <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] sm:h-24 sm:w-32">
+                                        <Image
+                                          src={relatedProject.cover}
+                                          alt={
+                                            relatedProject.coverAlt ||
+                                            `Imagem do projeto ${usage.name}`
+                                          }
+                                          fill
+                                          sizes="(max-width: 640px) 96px, 128px"
+                                          className="object-cover transition-transform duration-300 group-hover/use:scale-105"
+                                        />
+                                      </div>
+                                    )}
+                                    <div className="min-w-0 flex-1">
+                                      <div className="flex items-center justify-between gap-3">
+                                        <div className="flex min-w-0 items-center gap-2">
+                                          {technologyIcons[usage.name] && (
+                                            <span className="flex shrink-0 items-center justify-center">
+                                              {technologyIcons[usage.name]}
+                                            </span>
+                                          )}
+                                          <span
+                                            className={`text-sm font-semibold ${
+                                              href ? "group-hover/use:text-[var(--primary)]" : ""
+                                            }`}
+                                          >
+                                            {usage.name}
+                                          </span>
+                                      </div>
+                                        {href && (
+                                          <ArrowUpRight
+                                            size={17}
+                                            className="shrink-0 text-[var(--muted)] transition group-hover/use:-translate-y-0.5 group-hover/use:translate-x-0.5 group-hover/use:text-[var(--primary)]"
+                                          />
+                                        )}
+                                      </div>
+
+                                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                                        {usage.usage}
+                                      </p>
 
                                       {href && (
-                                        <ArrowUpRight
-                                          size={17}
-                                          className="shrink-0 text-[var(--muted)] transition group-hover/use:-translate-y-0.5 group-hover/use:translate-x-0.5 group-hover/use:text-[var(--primary)]"
-                                        />
+                                        <span className="mt-3 inline-block text-xs font-medium text-[var(--primary)]">
+                                          Conhecer projeto →
+                                        </span>
                                       )}
                                     </div>
-
-                                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                                      {usage.usage}
-                                    </p>
-
-                                    {href && (
-                                      <span className="mt-3 inline-block text-xs font-medium text-[var(--primary)]">
-                                        Conhecer projeto →
-                                      </span>
-                                    )}
-                                  </>
+                                  </div>
                                 );
 
                                 const key = `${usage.slug ?? "sem-link"}-${usage.name}-${index}`;

@@ -18,6 +18,7 @@ export interface Category {
 // Slugs dos projetos que possuem páginas próprias.
 export const projectSlugs = new Set([
   "antigo_portfolio",
+  "portfolio",
   "camada",
   "afterlands",
   "gerenciador-pacientes",
@@ -53,25 +54,6 @@ export const categories: Category[] = [
             slug: "camada",
             usage:
               "Utilizei para definir tipagens das estruturas de dados, parâmetros de cálculo e informações utilizadas pela aplicação.",
-          },
-        ],
-      },
-      {
-        name: "Java",
-        description:
-          "Linguagem de programação orientada a objetos, utilizada principalmente no desenvolvimento de aplicações robustas e sistemas backend.",
-        projectUses: [
-          {
-            name: "Mod de Minecraft",
-            slug: "mod-minecraft",
-            usage:
-              "Utilizei Java no desenvolvimento de um mod para Minecraft, trabalhando com a implementação de funcionalidades para o jogo.",
-          },
-          {
-            name: "Invest",
-            slug: "invest",
-            usage:
-              "Utilizei Java no desenvolvimento da primeira API da plataforma.",
           },
         ],
       },
@@ -121,9 +103,9 @@ export const categories: Category[] = [
         projectUses: [
           {
             name: "Invest",
-            slug: "gerenciador-pacientes",
+            slug: "invest",
             usage:
-              "Utilizarei no desenvolvimento do backend da plataforma, organizando a aplicação em módulos e serviços.",
+              "Em andamento para o desenvolvimento do backend da plataforma, organizando a aplicação em módulos e serviços.",
           },
         ],
       },
@@ -131,6 +113,14 @@ export const categories: Category[] = [
         name: "Node.js",
         description:
           "Ambiente de execução JavaScript que permite desenvolver aplicações e serviços no lado do servidor.",
+        projectUses: [
+          {
+            name: "MiniBlog",
+            slug: "miniblog",
+            usage:
+              "Utilizei Node.js no desenvolvimento do backend do MiniBlog, implementando a lógica de servidor, o processamento das requisições e a integração com o Firebase para armazenamento e gerenciamento dos dados da aplicação.",
+          },
+        ],
       },
       {
         name: "HTML",
@@ -160,6 +150,25 @@ export const categories: Category[] = [
             slug: "gerenciador-pacientes",
             usage:
               "Utilizei na estilização das páginas, organização dos elementos, formulários e construção de uma interface responsiva.",
+          },
+        ],
+      },
+      {
+        name: "Java",
+        description:
+          "Linguagem de programação orientada a objetos, utilizada principalmente no desenvolvimento de aplicações robustas e sistemas backend.",
+        projectUses: [
+          {
+            name: "Mod de Minecraft",
+            slug: "mod-minecraft",
+            usage:
+              "Utilizei Java no desenvolvimento de um mod para Minecraft, trabalhando com a implementação de funcionalidades para o jogo.",
+          },
+          {
+            name: "Invest",
+            slug: "invest",
+            usage:
+              "Utilizei Java no desenvolvimento da primeira API da plataforma.",
           },
         ],
       },
@@ -194,30 +203,6 @@ export const categories: Category[] = [
         ],
       },
       {
-        name: "MySQL",
-        description:
-          "Sistema gerenciador de banco de dados relacional bastante utilizado em aplicações web e sistemas que trabalham com SQL.",
-        projectUses: [
-          {
-            name: "Experiência profissional",
-            usage:
-              "Utilizei MySQL em atividades profissionais envolvendo armazenamento e gerenciamento de dados.",
-          },
-        ],
-      },
-      {
-        name: "Microsoft SQL Server",
-        description:
-          "Sistema gerenciador de banco de dados relacional desenvolvido pela Microsoft, utilizado em aplicações corporativas.",
-        projectUses: [
-          {
-            name: "Experiência profissional",
-            usage:
-              "Utilizei SQL Server em atividades profissionais envolvendo gerenciamento de bancos de dados, como o da Águia Branca.",
-          },
-        ],
-      },
-      {
         name: "MongoDB",
         description:
           "Banco de dados NoSQL orientado a documentos, que armazena informações em estruturas flexíveis semelhantes ao JSON.",
@@ -227,6 +212,31 @@ export const categories: Category[] = [
             slug: "antigo_portfolio",
             usage:
               "Utilizei MongoDB como banco de dados no desenvolvimento do meu portfólio de 2024.",
+          },
+        ],
+      },
+      {
+        name: "Firebase",
+        description:
+          "Plataforma do Google que oferece serviços para aplicações, incluindo autenticação, banco de dados e hospedagem.",
+        projectUses: [
+          {
+            name: "MiniBlog",
+            slug: "miniblog",
+            usage:
+              "Utilizei o Firebase como banco de dados no desenvolvimento do MiniBlog. Utilizando para guardar informações de cadastros, posts, entre outros.",
+          },
+        ],
+      },
+      {
+        name: "MySQL",
+        description:
+          "Sistema gerenciador de banco de dados relacional bastante utilizado em aplicações web e sistemas que trabalham com SQL.",
+        projectUses: [
+          {
+            name: "Experiência profissional",
+            usage:
+              "Utilizei MySQL em atividades profissionais envolvendo armazenamento e gerenciamento de dados.",
           },
         ],
       },
@@ -244,9 +254,16 @@ export const categories: Category[] = [
         ],
       },
       {
-        name: "Firebase",
+        name: "Microsoft SQL Server",
         description:
-          "Plataforma do Google que oferece serviços para aplicações, incluindo autenticação, banco de dados e hospedagem.",
+          "Sistema gerenciador de banco de dados relacional desenvolvido pela Microsoft, utilizado em aplicações corporativas.",
+        projectUses: [
+          {
+            name: "Experiência profissional",
+            usage:
+              "Utilizei SQL Server em atividades profissionais envolvendo gerenciamento de bancos de dados, como o da Águia Branca.",
+          },
+        ],
       },
       {
         name: "Oracle",
@@ -256,7 +273,7 @@ export const categories: Category[] = [
           {
             name: "Experiência profissional",
             usage:
-              "Tive contato com Oracle Database durante minha experiência profissional prestando suporte na Rede Gazeta, trabalhando com bancos de dados relacionais.",
+              "Utilizei Oracle Database durante minha experiência profissional prestando suporte em empresas de grande porte, trabalhando com bancos de dados relacionais.",
           },
         ],
       },
@@ -266,6 +283,18 @@ export const categories: Category[] = [
     name: "Ferramentas",
     technologies: [
       {
+        name: "Visual Studio Code",
+        description:
+          "Editor de código-fonte extensível, com suporte a diversas linguagens, ferramentas e extensões para desenvolvimento.",
+        projectUses: [
+          {
+            name: "Principal editor para criação Web",
+            usage:
+              "Utilizo para programação de Websites para frontend e backend.",
+          },
+        ],
+      },
+      {
         name: "Docker",
         description:
           "Plataforma de containerização que permite empacotar aplicações e suas dependências em ambientes isolados e reproduzíveis.",
@@ -274,7 +303,7 @@ export const categories: Category[] = [
             name: "Invest",
             slug: "invest",
             usage:
-              "Utilizarei Docker para gerenciar os ambientes e os serviços necessários ao funcionamento da plataforma.",
+              "Em andamento para gerenciar os ambientes e os serviços necessários ao funcionamento da plataforma.",
           },
         ],
       },
@@ -341,25 +370,13 @@ export const categories: Category[] = [
             name: "Gerenciador de Pacientes",
             slug: "gerenciador-pacientes",
             usage:
-              "Utilizo Figma para planejar e desenvolver os layouts e a identidade visual do meu próprio portfólio.",
+              "Utilizo Figma para planejar e desenvolver os layouts e a identidade visual do Gerenciador de Pacientes.",
           },
           {
             name: "MiniBlog",
             slug: "miniblog",
             usage:
-              "Utilizo Figma para planejar e desenvolver os layouts e a identidade visual do meu próprio portfólio de 2024.",
-          },
-        ],
-      },
-      {
-        name: "Visual Studio Code",
-        description:
-          "Editor de código-fonte extensível, com suporte a diversas linguagens, ferramentas e extensões para desenvolvimento.",
-        projectUses: [
-          {
-            name: "Principal editor para criação Web",
-            usage:
-              "Utilizo para programação de Websites para frontend e backend.",
+              "Utilizo Figma para planejar e desenvolver os layouts e a identidade visual do MiniBlog.",
           },
         ],
       },
@@ -384,7 +401,7 @@ export const categories: Category[] = [
           {
             name: "Experiência profissional",
             usage:
-              "Tive contato com serviços da AWS durante minha experiência profissional.",
+              "Utilizei com serviços da AWS durante minha experiência profissional.",
           },
         ],
       },
@@ -407,52 +424,29 @@ export const categories: Category[] = [
     name: "Sistemas e Infraestrutura",
     technologies: [
       {
-        name: "Arch Linux",
+        name: "Linux",
         description:
           "Distribuição Linux independente e altamente personalizável, conhecida pelo modelo rolling release e pela filosofia de simplicidade e controle do sistema.",
         projectUses: [
           {
-            name: "Ambiente pessoal",
-            slug: "ambiente-pessoal",
+            name: "Arch Linux",
             usage:
-              "Sistema operacional que utilizo atualmente no meu notebook, personalizando e administrando meu próprio ambiente de desenvolvimento.",
+              "Distribuição Linux independente e altamente personalizável, conhecida pelo modelo rolling release e pela filosofia de simplicidade e controle do sistema. Sistema operacional que utilizo atualmente no meu notebook, personalizando e administrando meu próprio ambiente de desenvolvimento.",
           },
-        ],
-      },
-      {
-        name: "Fedora Server",
-        description:
-          "Distribuição Linux voltada para ambientes de servidores, oferecendo tecnologias modernas para hospedagem, administração e gerenciamento de serviços.",
-        projectUses: [
           {
-            name: "Ambiente pessoal",
-            slug: "ambiente-pessoal",
+            name: "Fedora Server",
             usage:
-              "Utilizei Fedora Server em 2022 para explorar e trabalhar com ambientes Linux voltados a servidores.",
+              "Distribuição Linux voltada para ambientes de servidores, oferecendo tecnologias modernas para hospedagem, administração e gerenciamento de serviços. Utilizei Fedora Server em 2022 para explorar e trabalhar com ambientes Linux voltados a servidores.",
           },
-        ],
-      },
-      {
-        name: "Debian",
-        description:
-          "Distribuição GNU/Linux conhecida por sua estabilidade, segurança e ampla utilização em servidores e ambientes desktop.",
-        projectUses: [
           {
-            name: "Ambiente pessoal",
-            slug: "ambiente-pessoal",
-            usage: "Utilizei Debian como sistema operacional em 2020.",
+            name: "Debian",
+            usage:
+              "Distribuição GNU/Linux conhecida por sua estabilidade, segurança e ampla utilização em servidores e ambientes desktop. Utilizei Debian como sistema operacional em 2020.",
           },
-        ],
-      },
-      {
-        name: "Linux Mint",
-        description:
-          "Distribuição Linux baseada em Ubuntu e Debian, focada em facilidade de uso, estabilidade e uma experiência desktop acessível.",
-        projectUses: [
           {
-            name: "Ambiente pessoal",
-            slug: "ambiente-pessoal",
-            usage: "Utilizei Linux Mint como sistema operacional em 2024.",
+            name: "Linux Mint",
+            usage:
+              "Distribuição Linux baseada em Ubuntu e Debian, focada em facilidade de uso, estabilidade e uma experiência desktop acessível. Utilizei Linux Mint como sistema operacional em 2024.",
           },
         ],
       },

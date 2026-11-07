@@ -353,6 +353,61 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "portfolio",
+    name: "Portfolio",
+    description:
+      "Calculadora de preços para impressão 3D, facilitando o cálculo de custos, margens de lucro e preços de venda.",
+
+    longDescription: `
+      O Camada é uma aplicação web desenvolvida para auxiliar no cálculo
+      de preços de peças produzidas por minhas impressões 3D.
+
+      O projeto foi pensado para simplificar o processo de precificação,
+      considerando custos de filamento, energia elétrica, tempo de impressão
+      e outros fatores envolvidos na produção.
+
+      A aplicação também conta com recursos para organizar cálculos
+      e facilitar o acompanhamento dos preços sugeridos.
+    `,
+
+    category: "Aplicação Web",
+    status: "Finalizado",
+
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Lógica"],
+
+    // initials: "C.",
+    // gradient: "linear-gradient(135deg, #463678 0%, #17192e 100%)",
+    cover: "/images/projects/gerenciador-pacientes/telaInicial.png",
+    coverAlt: "Interface do Gerenciador de Pacientes",
+
+    githubUrl: "",
+    liveUrl: "",
+
+    media: [
+      {
+        type: "video",
+        src: "/projects/gerenciador-pacientes/demo.mp4",
+        poster: "/projects/gerenciador-pacientes/cover.png",
+        title: "Demonstração do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/portfolio/public/images/projects/gerenciador-pacientes/telaInicial.png",
+        alt: "Página inicial do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/portfolio/public/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+        alt: "Painel da aplicação Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/portfolio/public/images/projects/gerenciador-pacientes/gestao.png",
+        alt: "Calculadora de preços do Gerenciador Pacientes",
+      },
+    ],
+  },
+  {
     slug: "invest",
     name: "Invest",
     description:

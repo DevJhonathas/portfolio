@@ -6,7 +6,7 @@ import { SiGithub } from "@icons-pack/react-simple-icons";
 import {   
   FaLinkedin,
   FaWhatsapp,
-  FaInstagram,
+  // FaInstagram,
   FaEnvelope, } from "react-icons/fa";
 import { profile } from "@/app/data/profile";
 
@@ -36,12 +36,12 @@ export function Hero() {
       icon: <FaEnvelope size={21} />,
       external: false,
     },
-    {
-      name: "Instagram",
-      href: profile.instagram,
-      icon: <FaInstagram size={21} />,
-      external: true,
-    },
+    // {
+    //   name: "Instagram",
+    //   href: profile.instagram,
+    //   icon: <FaInstagram size={21} />,
+    //   external: true,
+    // },
   ];
   return (
     <section
@@ -69,9 +69,9 @@ export function Hero() {
               {profile.role}
             </h2>
 
-            <p className="mt-6 max-w-3xl text-base leading-8 text-[var(--muted)] sm:text-lg">
+            <div className="mt-6 max-w-3xl text-base leading-8 text-[var(--muted)] sm:text-lg">
               {profile.description}
-            </p>
+            </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <ScrollLink

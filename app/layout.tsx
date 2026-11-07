@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Providers } from "./components/layout/Providers";
 import "./globals.css";
 import { ScrollTarget } from "./components/layout/ScrollTarget";
+import { Navbar } from "./components/layout/Navbar";
+import { Footer } from "./components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Portfólio | Desenvolvedor",
@@ -19,7 +21,9 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <Providers>
           <ScrollTarget />
+          <Navbar />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

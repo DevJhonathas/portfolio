@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 
 import { StudyDuration } from "./StudyDuration";
+import { ExperienceDuration } from "./ExperienceDuration";
 
 const highlights = [
   {
@@ -49,21 +50,35 @@ export function Journey() {
         </h2>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:col-span-3 md:grid-cols-2">
+            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7">
+              <p className="text-sm text-[var(--muted)]">
+                Tempo estudando programação
+              </p>
 
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 md:col-span-3">
+              <div className="mt-3 text-3xl font-bold text-[var(--primary)] sm:text-4xl">
+                <StudyDuration />
+              </div>
 
-            <p className="text-sm text-[var(--muted)]">
-              Tempo estudando programação
-            </p>
-
-            <div className="mt-3 text-3xl font-bold text-[var(--primary)] sm:text-4xl">
-              <StudyDuration />
+              <p className="mt-3 text-sm text-[var(--muted)]">
+                Uma jornada de aprendizado, experimentação e desenvolvimento.
+              </p>
             </div>
 
-            <p className="mt-3 text-sm text-[var(--muted)]">
-              Uma jornada de aprendizado, experimentação e desenvolvimento.
-            </p>
+            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7">
+              <p className="text-sm text-[var(--muted)]">
+                Experiência profissional
+              </p>
 
+              <div className="mt-3 text-3xl font-bold text-[var(--primary)] sm:text-4xl">
+                <ExperienceDuration />
+              </div>
+
+              <p className="mt-3 text-sm text-[var(--muted)]">
+                Experiência acumulada em Técnico de Suporte de TI, desenvolvimento
+                de aplicações e gerenciamento de bancos de dados.
+              </p>
+            </div>
           </div>
 
          {highlights.map((item) => {

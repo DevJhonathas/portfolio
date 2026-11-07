@@ -1,5 +1,5 @@
-import { Navbar } from "@/app/components/layout/Navbar";
-import { Footer } from "@/app/components/layout/Footer";
+// import { Navbar } from "@/app/components/layout/Navbar";
+// import { Footer } from "@/app/components/layout/Footer";
 
 import { Hero } from "@/app/components/home/Hero";
 import { About } from "@/app/components/home/About";
@@ -12,8 +12,6 @@ import { Experience } from "@/app/components/home/Experience";
 export default function Home() {
   return (
     <>
-      <Navbar />
-
       <main>
         <Reveal>
           <Hero />
@@ -34,8 +32,6 @@ export default function Home() {
           <TechStack />
         </Reveal>
       </main>
-
-      <Footer />
     </>
   );
 }
