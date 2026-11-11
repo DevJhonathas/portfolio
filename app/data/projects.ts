@@ -26,7 +26,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "camada",
-    name: "Camada",
+    name: "Camada.",
     description:
       "Calculadora de preços para impressão 3D, facilitando o cálculo de custos, margens de lucro e preços de venda.",
 
@@ -49,7 +49,7 @@ export const projects: Project[] = [
 
     // initials: "C.",
     // gradient: "linear-gradient(135deg, #463678 0%, #17192e 100%)",
-    cover: "/images/projects/gerenciador-pacientes/telaInicial.png",
+    cover: "/images/projects/camada/telaInicial.png",
     coverAlt: "Interface do Gerenciador de Pacientes",
 
     githubUrl: "",
@@ -58,31 +58,31 @@ export const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "/projects/gerenciador-pacientes/demo.mp4",
-        poster: "/projects/gerenciador-pacientes/cover.png",
+        src: "/images/projects/camada/demo.mp4",
+        poster: "/images/projects/camada/cover.png",
         title: "Demonstração do Gerenciador Pacientes",
       },
       {
         type: "image",
-        src: "/portfolio/public/images/projects/gerenciador-pacientes/telaInicial.png",
+        src: "/images/projects/camada/telaInicial.png",
         alt: "Página inicial do Gerenciador Pacientes",
       },
       {
         type: "image",
-        src: "/portfolio/public/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+        src: "/images/projects/camada/telaInicial.png",
         alt: "Painel da aplicação Gerenciador Pacientes",
       },
       {
         type: "image",
-        src: "/portfolio/public/images/projects/gerenciador-pacientes/gestao.png",
+        src: "/images/projects/camada/telaInicial.png",
         alt: "Calculadora de preços do Gerenciador Pacientes",
       },
     ],
   },
 
   {
-    slug: "afterlands",
-    name: "Afterlands",
+    slug: "comparadorchaves",
+    name: "Comparador De Chaves",
     description:
       "Projeto de sobrevivência e construção inspirado em jogos sandbox, com exploração, criação e interação com o ambiente.",
 
@@ -98,14 +98,14 @@ export const projects: Project[] = [
       sistemas de sobrevivência, movimentação e inteligência artificial.
     `,
 
-    category: "Game Development",
+    category: "Software",
     status: "Finalizado",
 
     technologies: ["Roblox Studio", "Lua", "Game Design"],
 
     // initials: "C.",
     // gradient: "linear-gradient(135deg, #463678 0%, #17192e 100%)",
-    cover: "/images/projects/gerenciador-pacientes/telaInicial.png",
+    cover: "/images/projects/comparador-chaves/cover.png",
     coverAlt: "Interface do Gerenciador de Pacientes",
 
     githubUrl: "",
@@ -114,23 +114,38 @@ export const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "/projects/gerenciador-pacientes/demo.mp4",
-        poster: "/projects/gerenciador-pacientes/cover.png",
+        src: "/images/projects/comparador-chaves/demo.mp4",
+        poster: "/images/projects/comparador-chaves/cover.png",
         title: "Demonstração do Gerenciador Pacientes",
       },
       {
         type: "image",
-        src: "/portfolio/public/images/projects/gerenciador-pacientes/telaInicial.png",
+        src: "/images/projects/comparador-chaves/cover.png",
         alt: "Página inicial do Gerenciador Pacientes",
       },
       {
         type: "image",
-        src: "/portfolio/public/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+        src: "/images/projects/comparador-chaves/testaconexao.png",
         alt: "Painel da aplicação Gerenciador Pacientes",
       },
       {
         type: "image",
-        src: "/portfolio/public/images/projects/gerenciador-pacientes/gestao.png",
+        src: "/images/projects/comparador-chaves/salvaconfig.png",
+        alt: "Calculadora de preços do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/comparador-chaves/comparando.png",
+        alt: "Calculadora de preços do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/comparador-chaves/resultado.png",
+        alt: "Calculadora de preços do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/comparador-chaves/salvando.png",
         alt: "Calculadora de preços do Gerenciador Pacientes",
       },
     ],
@@ -210,7 +225,7 @@ export const projects: Project[] = [
 
     // initials: "C.",
     // gradient: "linear-gradient(135deg, #463678 0%, #17192e 100%)",
-    cover: "/images/projects/gerenciador-pacientes/telaInicial.png",
+    cover: "/images/projects/miniblog/cover.png",
     coverAlt: "Interface do Gerenciador de Pacientes",
 
     githubUrl: "https://github.com/DevJhonathas/Pacientes",
@@ -219,7 +234,7 @@ export const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "/images/projects/gerenciador-pacientes/demo.mp4",
+        src: "/images/projects/miniblog/demo.mp4",
         poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
         title: "Demonstração do Gerenciador Pacientes",
       },
@@ -386,7 +401,7 @@ export const projects: Project[] = [
     media: [
       {
         type: "video",
-        src: "/projects/gerenciador-pacientes/demo.mp4",
+        src: "/images/projects/camada/demo.mp4",
         poster: "/projects/gerenciador-pacientes/cover.png",
         title: "Demonstração do Gerenciador Pacientes",
       },
@@ -403,6 +418,58 @@ export const projects: Project[] = [
       {
         type: "image",
         src: "/portfolio/public/images/projects/gerenciador-pacientes/gestao.png",
+        alt: "Calculadora de preços do Gerenciador Pacientes",
+      },
+    ],
+  },
+  {
+    slug: "impostometro",
+    name: "Impostometro",
+    description:
+      "Aplicação web para gerenciamento de cadastros de pacientes, com operações CRUD e interface desenvolvida com Vue.js.",
+
+    longDescription: `
+      Projeto desenvolvido utilizando Vue.js para gerenciar cadastros
+      de pacientes através de uma interface organizada e intuitiva.
+
+      A aplicação permite realizar operações de cadastro, consulta,
+      atualização e exclusão de registros, explorando conceitos
+      fundamentais do desenvolvimento de aplicações web.
+    `,
+
+    category: "Aplicação Web",
+    status: "Em Desenvolvimento",
+
+    technologies: ["Vue.js", "JavaScript", "CSS"],
+
+    // initials: "C.",
+    // gradient: "linear-gradient(135deg, #463678 0%, #17192e 100%)",
+    cover: "/images/projects/impostometro/cover.png",
+    coverAlt: "Interface do Gerenciador de Pacientes",
+
+    githubUrl: "https://github.com/DevJhonathas/Pacientes",
+    liveUrl: "https://cg-crud-git-master-jhonathas-projects.vercel.app/",
+
+    media: [
+      {
+        type: "video",
+        src: "/images/projects/gerenciador-pacientes/demo.mp4",
+        poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
+        title: "Demonstração do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/gerenciador-pacientes/telaInicial.png",
+        alt: "Página inicial do Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+        alt: "Painel da aplicação Gerenciador Pacientes",
+      },
+      {
+        type: "image",
+        src: "/images/projects/gerenciador-pacientes/gestao.png",
         alt: "Calculadora de preços do Gerenciador Pacientes",
       },
     ],
@@ -429,7 +496,7 @@ export const projects: Project[] = [
 
     // initials: "C.",
     // gradient: "linear-gradient(135deg, #463678 0%, #17192e 100%)",
-    cover: "/images/projects/gerenciador-pacientes/telaInicial.png",
+    cover: "/images/projects/invest/cover.png",
     coverAlt: "Interface do Gerenciador de Pacientes",
 
     githubUrl: "https://github.com/DevJhonathas/Pacientes",
