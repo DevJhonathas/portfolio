@@ -32,9 +32,19 @@ import {
 
 import { categories, projectSlugs } from "../../data/stacks";
 import { projects } from "../../data/projects";
+import { assetPath } from "@/app/utils/assetPath";
+
+const technologyImage = (src: string, size = 20): ReactNode => (
+  <Image
+    src={assetPath(src)}
+    alt=""
+    width={size}
+    height={size}
+  />
+);
+
 
 const technologyIcons: Record<string, ReactNode> = {
-  // Stack
   JavaScript: <SiJavascript size={18} color="#F7DF1E" />,
   TypeScript: <SiTypescript size={18} color="#3178C6" />,
   React: <SiReact size={18} color="#61DAFB" />,
@@ -44,43 +54,41 @@ const technologyIcons: Record<string, ReactNode> = {
   "Node.js": <SiNodedotjs size={18} color="#5FA04E" />,
   HTML: <SiHtml5 size={18} color="#E34F26" />,
   "Tailwind CSS": <SiTailwindcss size={18} color="#06B6D4" />,
-  Java: <Image src="/images/svg/java.svg" alt="" width={20} height={20} />,
-  CSS: <Image src="/images/svg/css.svg" alt="" width={20} height={20} />,
+  Java: technologyImage("/images/svg/java.svg"),
+  CSS: technologyImage("/images/svg/css.svg"),
 
-  // Banco de Dados
   PostgreSQL: <SiPostgresql size={18} color="#4479A1" />,
   MySQL: <SiMysql size={18} color="#4479A1" />,
   MongoDB: <SiMongodb size={18} color="#47A248" />,
   Redis: <SiRedis size={18} color="#FF4438" />,
-  Firebase: <Image src="/images/svg/firebase.svg" alt="" width={20} height={20} />,
-  "Microsoft SQL Server": <Image src="/images/svg/microsoft-sql-server.svg" alt="" width={20} height={20} />,
-  Oracle: <Image src="/images/svg/oracle.svg" alt="" width={20} height={20} />,
+  Firebase: technologyImage("/images/svg/firebase.svg"),
+  "Microsoft SQL Server": technologyImage("/images/svg/microsoft-sql-server.svg"),
+  Oracle: technologyImage("/images/svg/oracle.svg"),
 
-  // Ferramentas
   Docker: <SiDocker size={18} color="#2496ED" />,
   GitHub: <SiGithub size={18} color="var(--foreground)" />,
   Vercel: <SiVercel size={18} color="var(--foreground)" />,
-  Python: <Image src="/images/svg/python.svg" alt="" width={25} height={25} />,
-  GitLab: <Image src="/images/svg/gitlab.svg" alt="" width={20} height={20} />, 
-  Postman: <Image src="/images/svg/postman.svg" alt="" width={20} height={20} />,
-  Bruno: <Image src="/images/svg/bruno.svg" alt="" width={20} height={20} />,
-  Figma: <Image src="/images/svg/figma.svg" alt="" width={20} height={20} />,
-  "Visual Studio Code": <Image src="/images/svg/visual-studio-code.svg" alt="" width={20} height={20} />,
+  Python: technologyImage("/images/svg/python.svg", 25),
+  GitLab: technologyImage("/images/svg/gitlab.svg"),
+  Postman: technologyImage("/images/svg/postman.svg"),
+  Bruno: technologyImage("/images/svg/bruno.svg"),
+  Figma: technologyImage("/images/svg/figma.svg"),
+  "Visual Studio Code": technologyImage("/images/svg/visual-studio-code.svg"),
   "IntelliJ IDEA": <Terminal size={18} />,
-  AWS: <Image src="/images/svg/aws.svg" alt="" width={20} height={20} />,
+  AWS: technologyImage("/images/svg/aws.svg"),
 
-  //Sistemas e infra
-  Linux: <Image src="/images/svg/linux.svg" alt="" width={20} height={20} />,
-  "Arch Linux": <Image src="/images/svg/arch-linux.svg" alt="" width={20} height={20} />,
-  Debian: <Image src="/images/svg/debian.svg" alt="" width={20} height={20} />,
-  "Fedora Server": <Image src="/images/svg/fedora.svg" alt="" width={20} height={20} />,
-  "Linux Mint": <Image src="/images/svg/linux-mint.svg" alt="" width={20} height={20} />,
-  Armbian: <Image src="/images/svg/armbian.webp" alt="" width={20} height={20} />,
-  "Pi-hole": <Image src="/images/svg/pi-hole.svg" alt="" width={20} height={20} />,
-  Unbound: <Image src="/images/svg/unbound.svg" alt="" width={20} height={20} />,
-  WireGuard: <Image src="/images/svg/wireguard.svg" alt="" width={20} height={20} />,
-  Nginx: <Image src="/images/svg/nginx.svg" alt="" width={20} height={20} />,
+  Linux: technologyImage("/images/svg/linux.svg"),
+  "Arch Linux": technologyImage("/images/svg/arch-linux.svg"),
+  Debian: technologyImage("/images/svg/debian.svg"),
+  "Fedora Server": technologyImage("/images/svg/fedora.svg"),
+  "Linux Mint": technologyImage("/images/svg/linux-mint.svg"),
+  Armbian: technologyImage("/images/svg/armbian.webp"),
+  "Pi-hole": technologyImage("/images/svg/pi-hole.svg"),
+  Unbound: technologyImage("/images/svg/unbound.svg"),
+  WireGuard: technologyImage("/images/svg/wireguard.svg"),
+  Nginx: technologyImage("/images/svg/nginx.svg"),
 };
+
 
 export function TechStack() {
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
@@ -230,7 +238,7 @@ export function TechStack() {
                                     {relatedProject?.cover && (
                                       <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] sm:h-24 sm:w-32">
                                         <Image
-                                          src={relatedProject.cover}
+                                         src={assetPath(relatedProject.cover)}
                                           alt={
                                             relatedProject.coverAlt ||
                                             `Imagem do projeto ${usage.name}`
