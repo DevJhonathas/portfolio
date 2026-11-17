@@ -25,6 +25,7 @@ export const projectSlugs = new Set([
   "miniblog",
   "orange-pi",
   "invest",
+  "comparadorchaves",
 ]);
 
 export const categories: Category[] = [
@@ -159,12 +160,6 @@ export const categories: Category[] = [
           "Linguagem de programação orientada a objetos, utilizada principalmente no desenvolvimento de aplicações robustas e sistemas backend.",
         projectUses: [
           {
-            name: "Mod de Minecraft",
-            slug: "mod-minecraft",
-            usage:
-              "Utilizei Java no desenvolvimento de um mod para Minecraft, trabalhando com a implementação de funcionalidades para o jogo.",
-          },
-          {
             name: "Invest",
             slug: "invest",
             usage:
@@ -178,8 +173,8 @@ export const categories: Category[] = [
           "Linguagem de programação versátil, utilizada no desenvolvimento de aplicações, automações, scripts e processamento de dados.",
         projectUses: [
           {
-            name: "Experiência profissional",
-            slug: "experiencia-profissional",
+            name: "Comparador Notas",
+            slug: "comparadorchaves",
             usage:
               "Utilizei Python para desenvolver pequenas aplicações e ferramentas internas que auxiliavam nas atividades da empresa.",
           },
@@ -426,7 +421,7 @@ export const categories: Category[] = [
       {
         name: "Linux",
         description:
-          "Distribuição Linux independente e altamente personalizável, conhecida pelo modelo rolling release e pela filosofia de simplicidade e controle do sistema.",
+          "Sistema operacional de código aberto, conhecido por sua estabilidade, segurança, flexibilidade e ampla possibilidade de personalização, utilizado em servidores, desktops e ambientes de desenvolvimento.",
         projectUses: [
           {
             name: "Arch Linux",
@@ -456,7 +451,7 @@ export const categories: Category[] = [
           "Sistema operacional baseado em Debian e Ubuntu, otimizado para computadores de placa única com arquitetura ARM, como Orange Pi.",
         projectUses: [
           {
-            name: "Orange Pi Zero 3 | Pi-hole + Unbound",
+            name: "Network-wide Ad Blocking & Private DNS Server",
             slug: "orange-pi",
             usage:
               "Utilizei como sistema operacional do Orange Pi Zero 3, preparando o ambiente para executar os serviços de rede.",
@@ -469,7 +464,7 @@ export const categories: Category[] = [
           "Ferramenta de filtragem DNS que bloqueia anúncios, rastreadores e domínios indesejados em toda a rede local.",
         projectUses: [
           {
-            name: "Orange Pi Zero 3 | Pi-hole + Unbound",
+            name: "Network-wide Ad Blocking & Private DNS Server",
             slug: "orange-pi",
             usage:
               "Configurei para realizar a filtragem DNS da rede local, bloqueando domínios associados a anúncios e rastreadores.",
@@ -482,7 +477,7 @@ export const categories: Category[] = [
           "Resolvedor DNS recursivo e validador DNSSEC, utilizado para realizar consultas diretamente à infraestrutura DNS.",
         projectUses: [
           {
-            name: "Orange Pi Zero 3 | Pi-hole + Unbound",
+            name: "Network-wide Ad Blocking & Private DNS Server",
             slug: "orange-pi",
             usage:
               "Configurei como resolvedor DNS recursivo, integrado ao Pi-hole para realizar consultas DNS.",
@@ -495,7 +490,7 @@ export const categories: Category[] = [
           "Servidor web de alto desempenho utilizado para disponibilizar aplicações, atuar como proxy reverso, balanceador de carga e gerenciar conexões HTTP.",
         projectUses: [
           {
-            name: "Orange Pi Zero 3 | Pi-hole + Unbound",
+            name: "Network-wide Ad Blocking & Private DNS Server",
             slug: "orange-pi",
             usage:
               "Incluído na configuração de infraestrutura do projeto para serviços web e gerenciamento de conexões.",
@@ -508,7 +503,7 @@ export const categories: Category[] = [
           "Solução moderna de VPN que permite criar redes privadas e túneis seguros de comunicação entre dispositivos e servidores.",
         projectUses: [
           {
-            name: "Orange Pi Zero 3 | Pi-hole + Unbound",
+            name: "Network-wide Ad Blocking & Private DNS Server",
             slug: "orange-pi",
             usage:
               "Incluído na infraestrutura para estabelecer conexões VPN e permitir comunicação privada entre dispositivos.",

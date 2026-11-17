@@ -99,7 +99,7 @@ export function Experience() {
             {experience.clientsServed.length > 0 && (
               <div className="mt-6 border-t border-[var(--border)] pt-5">
                 <h4 className="text-sm font-semibold">
-                  Algumas empresas atendidas
+                  Empresas atendidas
                 </h4>
 
                 <div className="mt-3 flex flex-wrap gap-2">
