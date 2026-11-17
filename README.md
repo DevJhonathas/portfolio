@@ -4,7 +4,7 @@
 
 Código do meu portfólio pessoal: uma página única com meus projetos, tecnologias e experiência, e uma página de detalhes para cada projeto.
 
-**Acesse:** [Em breve] <!--(URL_DO_DEPLOY)-->
+**Acesse:** [Link Portfolio](https://devjhonathas.github.io/portfolio/)
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ef9543d8-9276-4119-ad7e-4922d3cda9d3" width="48%" />
