@@ -331,7 +331,7 @@ export const projects: Project[] = [
 
     // initials: "C.",
     // gradient: "linear-gradient(135deg, #463678 0%, #17192e 100%)",
-    cover: "/images/projects/gerenciador-pacientes/telaInicial.png",
+    cover: "/images/projects/orangepi/telaInicial.png",
     coverAlt: "Interface do Gerenciador de Pacientes",
 
     // githubUrl: "https://github.com/DevJhonathas/Pacientes",
@@ -346,19 +346,19 @@ export const projects: Project[] = [
       // },
       {
         type: "image",
-        src: "/images/projects/gerenciador-pacientes/telaInicial.png",
+        src: "/images/projects/orangepi/telaInicial.png",
         alt: "Página inicial do Gerenciador Pacientes",
       },
-      {
-        type: "image",
-        src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
-        alt: "Painel da aplicação Gerenciador Pacientes",
-      },
-      {
-        type: "image",
-        src: "/images/projects/gerenciador-pacientes/gestao.png",
-        alt: "Calculadora de preços do Gerenciador Pacientes",
-      },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+      //   alt: "Painel da aplicação Gerenciador Pacientes",
+      // },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/gerenciador-pacientes/gestao.png",
+      //   alt: "Calculadora de preços do Gerenciador Pacientes",
+      // },
     ],
   },
   {
