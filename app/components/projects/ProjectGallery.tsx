@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import type { ProjectMedia } from "@/app/data/projects";
+import { assetPath } from "@/app/utils/assetPath";
 
 interface ProjectGalleryProps {
   media: ProjectMedia[];
@@ -57,25 +58,29 @@ export function ProjectGallery({
             controls
             playsInline
             preload="metadata"
-            poster={currentMedia.poster}
+            poster={
+              currentMedia.poster
+                ? assetPath(currentMedia.poster)
+                : undefined
+            }
             className="absolute inset-0 h-full w-full object-contain"
             aria-label={currentMedia.title ?? `Vídeo de ${projectName}`}
           >
-            <source
-              src={currentMedia.src}
-              type={
-                currentMedia.src.endsWith(".webm")
-                  ? "video/webm"
-                  : "video/mp4"
-              }
-            />
+          <source
+            src={assetPath(currentMedia.src)}
+            type={
+              currentMedia.src.endsWith(".webm")
+                ? "video/webm"
+                : "video/mp4"
+            }
+          />
 
             Seu navegador não suporta a reprodução deste vídeo.
           </video>
         ) : (
           <Image
             key={currentMedia.src}
-            src={currentMedia.src}
+            src={assetPath(currentMedia.src)}
             alt={currentMedia.alt ?? projectName}
             fill
             unoptimized
@@ -141,7 +146,7 @@ export function ProjectGallery({
 
                   {item.type === "image" ? (
                     <Image
-                      src={item.src}
+                      src={assetPath(item.src)}
                       alt={item.alt ?? `Imagem ${index + 1} de ${projectName}`}
                       fill
                       unoptimized
@@ -150,7 +155,7 @@ export function ProjectGallery({
                     />
                   ) : item.poster ? (
                     <Image
-                      src={item.poster}
+                      src={assetPath(item.poster)}
                       alt={`Prévia do vídeo de ${projectName}`}
                       fill
                       unoptimized

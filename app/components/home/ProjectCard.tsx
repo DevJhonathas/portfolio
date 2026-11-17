@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/app/data/projects";
 import Image from "next/image";
+import { assetPath } from "@/app/utils/assetPath";
 
 interface ProjectCardProps {
   project: Project;
@@ -16,7 +17,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <div className="group/image relative aspect-[16/10] w-full overflow-hidden bg-[var(--surface-hover)]">
 
         <Image
-          src={project.cover}
+          src={assetPath(project.cover)}
           alt={project.coverAlt}
           fill
           unoptimized
