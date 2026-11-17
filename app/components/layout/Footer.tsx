@@ -11,14 +11,8 @@ import {
 
 import { profile } from "@/app/data/profile";
 import { ScrollLink } from "./ScrollLink";
-import { Suspense } from "react";
-import { connection } from "next/server";
+import { CurrentYear } from "./CurrentYear";
 
-async function CurrentYear() {
-  await connection();
-
-  return <span>{new Date().getFullYear()}</span>;
-}
 
 export function Footer() {
   const socialLinks = [
@@ -64,15 +58,7 @@ export function Footer() {
 
           <p className="mt-1 text-sm text-[var(--muted)]">
             ©{" "}
-            <Suspense
-              fallback={
-                <span className="invisible" aria-hidden="true">
-                  2026
-                </span>
-              }
-            >
               <CurrentYear />
-            </Suspense>{" "}
             — Desenvolvido por {profile.name}.
           </p>
         </div>

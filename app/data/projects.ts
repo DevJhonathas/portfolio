@@ -215,12 +215,12 @@ export const projects: Project[] = [
     liveUrl: "https://cg-crud-git-master-jhonathas-projects.vercel.app/",
 
     media: [
-      {
-        type: "video",
-        src: "/images/projects/gerenciador-pacientes/demo.mp4",
-        poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
-        title: "Demonstração do Gerenciador Pacientes",
-      },
+      // {
+      //   type: "video",
+      //   src: "/images/projects/gerenciador-pacientes/demo.mp4",
+      //   poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
+      //   title: "Demonstração do Gerenciador Pacientes",
+      // },
       {
         type: "image",
         src: "/images/projects/gerenciador-pacientes/telaInicial.png",
@@ -285,21 +285,21 @@ export const projects: Project[] = [
         src: "/images/projects/miniblog/cover.png",
         alt: "Página inicial do MiniBlog",
       },
-      {
-        type: "image",
-        src: "/images/projects/miniblog/dashboard.png",
-        alt: "Dashboard de gerenciamento das publicações",
-      },
-      {
-        type: "image",
-        src: "/images/projects/miniblog/editor.png",
-        alt: "Editor de criação e formatação de publicações",
-      },
-      {
-        type: "image",
-        src: "/images/projects/miniblog/post.png",
-        alt: "Página de visualização de uma publicação",
-      },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/miniblog/dashboard.png",
+      //   alt: "Dashboard de gerenciamento das publicações",
+      // },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/miniblog/editor.png",
+      //   alt: "Editor de criação e formatação de publicações",
+      // },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/miniblog/post.png",
+      //   alt: "Página de visualização de uma publicação",
+      // },
     ],
   },
   {
@@ -400,31 +400,31 @@ export const projects: Project[] = [
     cover: "/images/projects/portfolio2024/cover.png",
     coverAlt: "Interface do Gerenciador de Pacientes",
 
-    githubUrl: "https://github.com/DevJhonathas/Pacientes",
-    liveUrl: "https://cg-crud-git-master-jhonathas-projects.vercel.app/",
+    githubUrl: "https://github.com/DevJhonathas/Portfolio2024",
+    liveUrl: "https://portfolio2024-e4t3.vercel.app/",
 
     media: [
-      {
-        type: "video",
-        src: "/images/projects/gerenciador-pacientes/demo.mp4",
-        poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
-        title: "Demonstração do Gerenciador Pacientes",
-      },
+      // {
+      //   type: "video",
+      //   src: "/images/projects/gerenciador-pacientes/demo.mp4",
+      //   poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
+      //   title: "Demonstração do Gerenciador Pacientes",
+      // },
       {
         type: "image",
         src: "/images/projects/portfolio2024/cover.png",
         alt: "Página inicial do Gerenciador Pacientes",
       },
-      {
-        type: "image",
-        src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
-        alt: "Painel da aplicação Gerenciador Pacientes",
-      },
-      {
-        type: "image",
-        src: "/images/projects/gerenciador-pacientes/gestao.png",
-        alt: "Calculadora de preços do Gerenciador Pacientes",
-      },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+      //   alt: "Painel da aplicação Gerenciador Pacientes",
+      // },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/gerenciador-pacientes/gestao.png",
+      //   alt: "Calculadora de preços do Gerenciador Pacientes",
+      // },
     ],
   },
   {
@@ -469,7 +469,7 @@ export const projects: Project[] = [
     cover: "/images/projects/portfolio/cover.png",
     coverAlt: "Interface do Gerenciador de Pacientes",
 
-    githubUrl: "",
+    githubUrl: "https://github.com/DevJhonathas/portfolio",
     liveUrl: "",
 
     media: [
@@ -543,27 +543,27 @@ export const projects: Project[] = [
     // liveUrl: "https://cg-crud-git-master-jhonathas-projects.vercel.app/",
 
     media: [
-      {
-        type: "video",
-        src: "/images/projects/gerenciador-pacientes/demo.mp4",
-        poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
-        title: "Demonstração do Gerenciador Pacientes",
-      },
+      // {
+      //   type: "video",
+      //   src: "/images/projects/gerenciador-pacientes/demo.mp4",
+      //   poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
+      //   title: "Demonstração do Gerenciador Pacientes",
+      // },
       {
         type: "image",
-        src: "/images/projects/gerenciador-pacientes/telaInicial.png",
+        src: "/images/projects/invest/cover.png",
         alt: "Página inicial do Gerenciador Pacientes",
       },
-      {
-        type: "image",
-        src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
-        alt: "Painel da aplicação Gerenciador Pacientes",
-      },
-      {
-        type: "image",
-        src: "/images/projects/gerenciador-pacientes/gestao.png",
-        alt: "Calculadora de preços do Gerenciador Pacientes",
-      },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+      //   alt: "Painel da aplicação Gerenciador Pacientes",
+      // },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/gerenciador-pacientes/gestao.png",
+      //   alt: "Calculadora de preços do Gerenciador Pacientes",
+      // },
     ],
   },
   {
@@ -609,31 +609,31 @@ export const projects: Project[] = [
     cover: "/images/projects/impostometro/cover.png",
     coverAlt: "Interface do Gerenciador de Pacientes",
 
-    githubUrl: "https://github.com/DevJhonathas/Pacientes",
-    liveUrl: "https://cg-crud-git-master-jhonathas-projects.vercel.app/",
+    // githubUrl: "https://github.com/DevJhonathas/Pacientes",
+    // liveUrl: "https://cg-crud-git-master-jhonathas-projects.vercel.app/",
 
     media: [
-      {
-        type: "video",
-        src: "/images/projects/gerenciador-pacientes/demo.mp4",
-        poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
-        title: "Demonstração do Gerenciador Pacientes",
-      },
+      // {
+      //   type: "video",
+      //   src: "/images/projects/gerenciador-pacientes/demo.mp4",
+      //   poster: "/images/projects/gerenciador-pacientes/telaInicial.png",
+      //   title: "Demonstração do Gerenciador Pacientes",
+      // },
       {
         type: "image",
-        src: "/images/projects/gerenciador-pacientes/telaInicial.png",
+        src: "/images/projects/impostometro/cover.png",
         alt: "Página inicial do Gerenciador Pacientes",
       },
-      {
-        type: "image",
-        src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
-        alt: "Painel da aplicação Gerenciador Pacientes",
-      },
-      {
-        type: "image",
-        src: "/images/projects/gerenciador-pacientes/gestao.png",
-        alt: "Calculadora de preços do Gerenciador Pacientes",
-      },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/gerenciador-pacientes/cadastroPacientes.png",
+      //   alt: "Painel da aplicação Gerenciador Pacientes",
+      // },
+      // {
+      //   type: "image",
+      //   src: "/images/projects/gerenciador-pacientes/gestao.png",
+      //   alt: "Calculadora de preços do Gerenciador Pacientes",
+      // },
     ],
   },
 ];

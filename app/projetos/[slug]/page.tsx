@@ -13,6 +13,8 @@ import { ProjectCard } from "@/app/components/home/ProjectCard";
 import { projects } from "@/app/data/projects";
 import { ScrollLink } from "@/app/components/layout/ScrollLink";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
