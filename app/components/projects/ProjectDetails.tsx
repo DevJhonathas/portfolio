@@ -1,34 +1,46 @@
+
+import { getTranslations } from "next-intl/server";
+
 import { ExternalLink } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
-import type { Project } from "@/app/data/projects";
+import type {
+  Project,
+  ProjectContent,
+} from "@/app/data/projects";
+
 interface ProjectDetailsProps {
   project: Project;
+  content: ProjectContent;
 }
 
-export function ProjectDetails({ project }: ProjectDetailsProps) {
+export async function ProjectDetails({
+  project,
+  content,
+}: ProjectDetailsProps) {
+  const t = await getTranslations("projectDetails");
+
   return (
     <section className="mt-10 border-t border-[var(--border)] pt-8">
       <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
         <div>
           <span className="text-sm font-semibold uppercase tracking-widest text-[var(--primary)]">
-            Sobre o projeto
+            {t("aboutProject")}
           </span>
 
           <h2 className="mt-3 text-2xl font-bold">
-            Conheça o {project.name}
+            {t("knowProject", { name: content.name })}
           </h2>
 
           <p className="mt-5 whitespace-pre-line text-base leading-8 text-[var(--muted)]">
-            {project.longDescription}
+            {content.longDescription}
           </p>
         </div>
 
         <aside className="flex flex-col gap-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6">
-
           <div>
             <h3 className="font-semibold">
-              Tecnologias utilizadas
+              {t("technologies")}
             </h3>
 
             <div className="mt-4 flex flex-wrap gap-2">
@@ -42,10 +54,12 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               ))}
             </div>
           </div>
+
           <div className="border-t border-[var(--border)] pt-5">
             <h3 className="font-semibold">
-              Links do projeto
+              {t("links")}
             </h3>
+
             <div className="mt-4 flex flex-col gap-3">
               {project.githubUrl && (
                 <a
@@ -55,7 +69,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                   className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border)] px-4 py-3 text-sm font-medium transition hover:border-[var(--primary)] hover:bg-[var(--surface-hover)] hover:text-[var(--primary)]"
                 >
                   <SiGithub size={18} />
-                  Repositório GitHub
+                  {t("repository")}
                 </a>
               )}
 
@@ -66,27 +80,28 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-xl bg-[var(--button-bg)] px-4 py-3 text-sm font-semibold text-[var(--button-text)] transition hover:bg-[var(--button-hover)]"
                 >
-                  Acessar projeto
+                  {t("access")}
                   <ExternalLink size={17} />
                 </a>
               )}
             </div>
           </div>
+
           <div className="border-t border-[var(--border)] pt-5">
             <p className="text-xs text-[var(--muted)]">
-              Categoria
+              {t("category")}
             </p>
 
             <p className="mt-1 text-sm font-medium">
-              {project.category}
+              {content.category}
             </p>
 
             <p className="mt-4 text-xs text-[var(--muted)]">
-              Status
+              {t("status")}
             </p>
 
             <p className="mt-1 text-sm font-medium">
-              {project.status}
+              {content.status}
             </p>
           </div>
         </aside>

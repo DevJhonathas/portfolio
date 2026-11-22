@@ -1,13 +1,19 @@
+
 "use client";
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 
 export function ScrollTarget() {
   const pathname = usePathname();
+  const locale = useLocale();
+
+  const homePath = `/${locale}`;
+  const currentPath = pathname.replace(/\/+$/, "") || "/";
 
   useEffect(() => {
-    if (pathname !== "/") return;
+    if (currentPath !== homePath) return;
 
     const targetId = sessionStorage.getItem(
       "portfolio-scroll-target"
@@ -20,6 +26,7 @@ export function ScrollTarget() {
 
     function scrollToTarget() {
       const target = document.getElementById(targetId!);
+
       if (!target) {
         attempts++;
 
@@ -49,7 +56,7 @@ export function ScrollTarget() {
     return () => {
       cancelAnimationFrame(frameId);
     };
-  }, [pathname]);
+  }, [pathname, currentPath, homePath]);
 
   return null;
 }

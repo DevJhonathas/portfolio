@@ -1,20 +1,25 @@
 
+"use client";
+
+import { useTranslations } from "next-intl";
+
 import { ArrowUp } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
 import {
   FaLinkedin,
   FaWhatsapp,
-  // FaInstagram,
   FaEnvelope,
 } from "react-icons/fa";
 
 import { profile } from "@/app/data/profile";
+
 import { ScrollLink } from "./ScrollLink";
 import { CurrentYear } from "./CurrentYear";
 
-
 export function Footer() {
+  const t = useTranslations("footer");
+
   const socialLinks = [
     {
       name: "GitHub",
@@ -35,17 +40,11 @@ export function Footer() {
       external: true,
     },
     {
-      name: "E-mail",
+      name: t("email"),
       href: `mailto:${profile.email}`,
       icon: <FaEnvelope size={19} />,
       external: false,
     },
-    // {
-    //   name: "Instagram",
-    //   href: profile.instagram,
-    //   icon: <FaInstagram size={19} />,
-    //   external: true,
-    // },
   ];
 
   return (
@@ -57,42 +56,40 @@ export function Footer() {
           </p>
 
           <p className="mt-1 text-sm text-[var(--muted)]">
-            ©{" "}
-              <CurrentYear />
-            — Desenvolvido por {profile.name}.
+            © <CurrentYear /> — {t("developedBy", { name: profile.name })}
           </p>
         </div>
 
-<div className="flex flex-wrap items-center justify-center gap-2">
-  {socialLinks.map((item) => (
-    <a
-      key={item.name}
-      href={item.href}
-      target={item.external ? "_blank" : undefined}
-      rel={item.external ? "noopener noreferrer" : undefined}
-      aria-label={item.name}
-      title={item.name}
-      className="group flex min-w-[68px] flex-col items-center justify-center gap-1.5 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-2.5 text-[var(--muted)] transition-all duration-200 hover:-translate-y-1 hover:border-[var(--primary)] hover:bg-[var(--surface-hover)] hover:text-[var(--primary)] sm:h-[68px] sm:w-[76px] sm:min-w-0 sm:px-2 sm:py-0"
-    >
-      <span className="flex h-5 w-5 items-center justify-center [&>svg]:h-5 [&>svg]:w-5">
-        {item.icon}
-      </span>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          {socialLinks.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
+              aria-label={item.name}
+              title={item.name}
+              className="group flex min-w-[68px] flex-col items-center justify-center gap-1.5 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-2.5 text-[var(--muted)] transition-all duration-200 hover:-translate-y-1 hover:border-[var(--primary)] hover:bg-[var(--surface-hover)] hover:text-[var(--primary)] sm:h-[68px] sm:w-[76px] sm:min-w-0 sm:px-2 sm:py-0"
+            >
+              <span className="flex h-5 w-5 items-center justify-center [&>svg]:h-5 [&>svg]:w-5">
+                {item.icon}
+              </span>
 
-      <span className="text-[11px] font-medium leading-none">
-        {item.name}
-      </span>
-    </a>
-  ))}
+              <span className="text-[11px] font-medium leading-none">
+                {item.name}
+              </span>
+            </a>
+          ))}
 
-  <ScrollLink
-    href="#inicio"
-    aria-label="Voltar ao início"
-    title="Voltar ao topo"
-    className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] transition-all duration-200 hover:-translate-y-1 hover:border-[var(--primary)] hover:bg-[var(--surface-hover)] hover:text-[var(--primary)] sm:h-[68px] sm:w-[76px]"
-  >
-    <ArrowUp size={19} />
-  </ScrollLink>
-</div>
+          <ScrollLink
+            href="#inicio"
+            aria-label={t("backToTop")}
+            title={t("backToTopTitle")}
+            className="group flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] transition-all duration-200 hover:-translate-y-1 hover:border-[var(--primary)] hover:bg-[var(--surface-hover)] hover:text-[var(--primary)] sm:h-[68px] sm:w-[76px]"
+          >
+            <ArrowUp size={19} />
+          </ScrollLink>
+        </div>
       </div>
     </footer>
   );

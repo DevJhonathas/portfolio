@@ -1,3 +1,7 @@
+
+"use client";
+
+import { useTranslations } from "next-intl";
 import { profile } from "@/app/data/profile";
 
 function calculateExperienceDuration(
@@ -27,7 +31,7 @@ function calculateExperienceDuration(
       end < start;
 
     if (invalidDate) {
-      return "Verifique os períodos cadastrados";
+      return null;
     }
 
     let months =
@@ -41,26 +45,34 @@ function calculateExperienceDuration(
     totalMonths += months;
   }
 
-  if (totalMonths <= 0) {
-    return "Menos de um mês";
-  }
-
-  const years = Math.floor(totalMonths / 12);
-  const months = totalMonths % 12;
-
-  const result = [];
-
-  if (years > 0) {
-    result.push(`${years} ${years === 1 ? "ano" : "anos"}`);
-  }
-
-  if (months > 0) {
-    result.push(`${months} ${months === 1 ? "mês" : "meses"}`);
-  }
-
-  return result.join(" e ");
+  return {
+    years: Math.floor(totalMonths / 12),
+    months: totalMonths % 12,
+  };
 }
 
 export function ExperienceDuration() {
-  return <>{calculateExperienceDuration(profile.workPeriods)}</>;
+  const t = useTranslations("duration");
+
+  const duration = calculateExperienceDuration(profile.workPeriods);
+
+  if (!duration) {
+    return <>{t("invalidPeriods")}</>;
+  }
+
+  if (duration.years === 0 && duration.months === 0) {
+    return <>{t("lessThanMonth")}</>;
+  }
+
+  const result: string[] = [];
+
+  if (duration.years > 0) {
+    result.push(t("years", { count: duration.years }));
+  }
+
+  if (duration.months > 0) {
+    result.push(t("months", { count: duration.months }));
+  }
+
+  return <>{result.join(t("joiner"))}</>;
 }

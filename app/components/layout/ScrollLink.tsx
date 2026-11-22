@@ -1,7 +1,9 @@
+
 "use client";
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 import type {
   ComponentProps,
@@ -22,6 +24,10 @@ export function ScrollLink({
 }: ScrollLinkProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const locale = useLocale();
+
+  const homePath = `/${locale}`;
+  const currentPath = pathname.replace(/\/+$/, "") || "/";
 
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
     if (
@@ -43,7 +49,7 @@ export function ScrollLink({
         : href.substring(1)
     );
 
-    if (pathname === "/") {
+    if (currentPath === homePath) {
       const target = document.getElementById(targetId);
 
       if (target) {
@@ -61,7 +67,7 @@ export function ScrollLink({
     } else {
       sessionStorage.setItem("portfolio-scroll-target", targetId);
 
-      router.push("/", { scroll: false });
+      router.push(`${homePath}/`, { scroll: false });
     }
 
     onClick?.(event);

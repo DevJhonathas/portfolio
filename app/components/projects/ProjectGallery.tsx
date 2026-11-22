@@ -13,6 +13,8 @@ import {
 import type { ProjectMedia } from "@/app/data/projects";
 import { assetPath } from "@/app/utils/assetPath";
 
+import { useTranslations } from "next-intl";
+
 interface ProjectGalleryProps {
   media: ProjectMedia[];
   projectName: string;
@@ -23,6 +25,7 @@ export function ProjectGallery({
   projectName,
 }: ProjectGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const t = useTranslations("projectGallery");
 
   function changeMedia(index: number) {
     setActiveIndex((index + media.length) % media.length);
@@ -64,7 +67,7 @@ export function ProjectGallery({
                 : undefined
             }
             className="absolute inset-0 h-full w-full object-contain"
-            aria-label={currentMedia.title ?? `Vídeo de ${projectName}`}
+            aria-label={currentMedia.title ?? t("videoOf", { projectName })}
           >
           <source
             src={assetPath(currentMedia.src)}
@@ -81,7 +84,7 @@ export function ProjectGallery({
           <Image
             key={currentMedia.src}
             src={assetPath(currentMedia.src)}
-            alt={currentMedia.alt ?? projectName}
+            alt={t("videoPreview", { projectName })}
             fill
             unoptimized
             priority={activeIndex === 0}
@@ -133,9 +136,10 @@ export function ProjectGallery({
                   key={`${item.src}-${index}`}
                   type="button"
                   onClick={() => changeMedia(index)}
-                  aria-label={`Selecionar ${
-                    item.type === "video" ? "vídeo" : "imagem"
-                  } ${index + 1}`}
+                  aria-label={t(
+                    item.type === "video" ? "selectVideo" : "selectImage",
+                    { index: index + 1 }
+                  )}
                   aria-pressed={isActive}
                   className={`relative flex h-16 w-24 shrink-0 snap-start items-center justify-center overflow-hidden rounded-lg border transition sm:h-20 sm:w-32 sm:rounded-xl ${
                     isActive

@@ -1,15 +1,14 @@
+
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import Image from "next/image";
-import {
-  ChevronDown,
-  Code2,
-  Terminal,
-} from "lucide-react";
+
+import { useLocale, useTranslations } from "next-intl";
+
+import { ArrowUpRight, ChevronDown, Code2, Terminal } from "lucide-react";
 
 import {
   SiJavascript,
@@ -30,11 +29,14 @@ import {
   SiVercel,
 } from "@icons-pack/react-simple-icons";
 
-import { categories, projectSlugs } from "../../data/stacks";
-import { projects } from "../../data/projects";
+import { categories } from "@/app/data/stacks";
+import { projects } from "@/app/data/projects";
 import { assetPath } from "@/app/utils/assetPath";
 
-const technologyImage = (src: string, size = 20): ReactNode => (
+const technologyImage = (
+  src: string,
+  size = 20
+): ReactNode => (
   <Image
     src={assetPath(src)}
     alt=""
@@ -42,7 +44,6 @@ const technologyImage = (src: string, size = 20): ReactNode => (
     height={size}
   />
 );
-
 
 const technologyIcons: Record<string, ReactNode> = {
   JavaScript: <SiJavascript size={18} color="#F7DF1E" />,
@@ -89,17 +90,21 @@ const technologyIcons: Record<string, ReactNode> = {
   Nginx: technologyImage("/images/svg/nginx.svg"),
 };
 
-
 export function TechStack() {
+  const t = useTranslations("techStack");
+  const projectT = useTranslations("projectContent");
+  const locale = useLocale();
+
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
+
   const detailsRef = useRef<HTMLDivElement>(null);
 
   const selectedCategory = categories.find((category) =>
-    category.technologies.some((tech) => tech.name === selectedTech)
+    category.technologies.some((tech) => tech.id === selectedTech)
   );
 
   const selectedTechnology = selectedCategory?.technologies.find(
-    (tech) => tech.name === selectedTech
+    (tech) => tech.id === selectedTech
   );
 
   useEffect(() => {
@@ -115,51 +120,48 @@ export function TechStack() {
     return () => window.cancelAnimationFrame(frame);
   }, [selectedTech]);
 
-  function handleSelect(name: string) {
-    setSelectedTech((current) => (current === name ? null : name));
+  function handleSelect(id: string) {
+    setSelectedTech((current) => (current === id ? null : id));
   }
 
   return (
     <section id="tecnologias" className="scroll-mt-32 py-10 md:py-12">
       <div className="mx-auto max-w-6xl px-5">
-        
         <span className="text-sm font-semibold uppercase tracking-widest text-[var(--primary)]">
-          Ferramentas
+          {t("eyebrow")}
         </span>
 
         <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-          Tecnologias
+          {t("title")}
         </h2>
 
         <p className="mt-4 max-w-xl leading-7 text-[var(--muted)]">
-          Tecnologias, bancos de dados e ferramentas que utilizo durante
-          minha jornada no desenvolvimento.
+          {t("description")}
         </p>
 
         <div className="mt-7 space-y-7">
           {categories.map((category) => {
             const categorySelected = category.technologies.some(
-              (tech) => tech.name === selectedTech
+              (tech) => tech.id === selectedTech
             );
 
             return (
-              <div key={category.name}>
-                
+              <div key={category.id}>
                 <h3 className="mb-3 text-sm font-semibold text-[var(--muted)]">
-                  {category.name}
+                  {t(`categories.${category.id}`)}
                 </h3>
 
                 <div className="flex flex-wrap gap-2">
                   {category.technologies.map((tech) => {
-                    const isSelected = selectedTech === tech.name;
+                    const isSelected = selectedTech === tech.id;
 
                     return (
                       <button
-                        key={tech.name}
+                        key={tech.id}
                         type="button"
-                        onClick={() => handleSelect(tech.name)}
+                        onClick={() => handleSelect(tech.id)}
                         aria-expanded={isSelected}
-                        aria-controls={`description-${category.name}`}
+                        aria-controls={`description-${category.id}`}
                         className={`inline-flex items-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
                           isSelected
                             ? "border-[var(--primary)] bg-[var(--primary)]/15 text-[var(--primary)]"
@@ -191,7 +193,7 @@ export function TechStack() {
                 >
                   <div className="min-h-0 overflow-hidden">
                     <div
-                      id={`description-${category.name}`}
+                      id={`description-${category.id}`}
                       ref={categorySelected ? detailsRef : null}
                       aria-hidden={!categorySelected}
                       aria-live="polite"
@@ -201,113 +203,135 @@ export function TechStack() {
                           : "pointer-events-none -translate-y-2 opacity-0"
                       }`}
                     >
-                      <div className="flex items-center gap-2">
-                        <Code2
-                          size={18}
-                          className="text-[var(--primary)]"
-                        />
+                      {selectedTechnology && (
+                        <>
+                          <div className="flex items-center gap-2">
+                            <Code2
+                              size={18}
+                              className="text-[var(--primary)]"
+                            />
 
-                        <h4 className="font-semibold">
-                          {selectedTechnology?.name}
-                        </h4>
-                      </div>
-
-                      <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-                        {selectedTechnology?.description}
-                      </p>
-
-                      {selectedTechnology?.projectUses &&
-                        selectedTechnology.projectUses.length > 0 && (
-                          <div className="mt-5 border-t border-[var(--border)] pt-4">
-                            <h5 className="text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
-                              Onde utilizei
-                            </h5>
-                            <div className="mt-3 space-y-3">
-                              {selectedTechnology?.projectUses.map((usage, index) => {
-                                const href =
-                                  usage.slug && projectSlugs.has(usage.slug)
-                                    ? `/projetos/${usage.slug}`
-                                    : null;
-
-                                const relatedProject = usage.slug
-                                    ? projects.find((project) => project.slug === usage.slug)
-                                    : undefined;
-
-                                const cardContent = (
-                                  <div className="flex items-start gap-3 sm:gap-4">
-                                    {relatedProject?.cover && (
-                                      <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] sm:h-24 sm:w-32">
-                                        <Image
-                                         src={assetPath(relatedProject.cover)}
-                                          alt={
-                                            relatedProject.coverAlt ||
-                                            `Imagem do projeto ${usage.name}`
-                                          }
-                                          fill
-                                          sizes="(max-width: 640px) 96px, 128px"
-                                          className="object-cover transition-transform duration-300 group-hover/use:scale-105"
-                                        />
-                                      </div>
-                                    )}
-                                    <div className="min-w-0 flex-1">
-                                      <div className="flex items-center justify-between gap-3">
-                                        <div className="flex min-w-0 items-center gap-2">
-                                          {technologyIcons[usage.name] && (
-                                            <span className="flex shrink-0 items-center justify-center">
-                                              {technologyIcons[usage.name]}
-                                            </span>
-                                          )}
-                                          <span
-                                            className={`text-sm font-semibold ${
-                                              href ? "group-hover/use:text-[var(--primary)]" : ""
-                                            }`}
-                                          >
-                                            {usage.name}
-                                          </span>
-                                      </div>
-                                        {href && (
-                                          <ArrowUpRight
-                                            size={17}
-                                            className="shrink-0 text-[var(--muted)] transition group-hover/use:-translate-y-0.5 group-hover/use:translate-x-0.5 group-hover/use:text-[var(--primary)]"
-                                          />
-                                        )}
-                                      </div>
-
-                                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                                        {usage.usage}
-                                      </p>
-
-                                      {href && (
-                                        <span className="mt-3 inline-block text-xs font-medium text-[var(--primary)]">
-                                          Conhecer projeto →
-                                        </span>
-                                      )}
-                                    </div>
-                                  </div>
-                                );
-
-                                const key = `${usage.slug ?? "sem-link"}-${usage.name}-${index}`;
-
-                                return href ? (
-                                  <Link
-                                    key={key}
-                                    href={href}
-                                    className="group/use block rounded-lg border border-[var(--border)] bg-[var(--background)] p-4 transition hover:border-[var(--primary)]"
-                                  >
-                                    {cardContent}
-                                  </Link>
-                                ) : (
-                                  <div
-                                    key={key}
-                                    className="block rounded-lg border border-[var(--border)] bg-[var(--background)] p-4"
-                                  >
-                                    {cardContent}
-                                  </div>
-                                );
-                              })}
-                            </div>
+                            <h4 className="font-semibold">
+                              {selectedTechnology.name}
+                            </h4>
                           </div>
-                        )}
+
+                          <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
+                            {t(`items.${selectedTechnology.id}.description`)}
+                          </p>
+
+                          {selectedTechnology.projectUses &&
+                            selectedTechnology.projectUses.length > 0 && (
+                              <div className="mt-5 border-t border-[var(--border)] pt-4">
+                                <h5 className="text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
+                                  {t("whereUsed")}
+                                </h5>
+
+                                <div className="mt-3 space-y-3">
+                                  {selectedTechnology.projectUses.map(
+                                    (usage, index) => {
+                                      const usageKey = `items.${selectedTechnology.id}.uses.${usage.id}`;
+
+                                      const relatedProject = usage.slug
+                                        ? projects.find(
+                                            (project) =>
+                                              project.slug === usage.slug
+                                          )
+                                        : undefined;
+
+                                      const href = relatedProject
+                                        ? `/${locale}/projetos/${usage.slug}/`
+                                        : null;
+
+                                      const usageTitle = usage.slug
+                                        ? projectT(`${usage.slug}.name`)
+                                        : t(`${usageKey}.title`);
+
+                                      const usageDescription = t(
+                                        `${usageKey}.description`
+                                      );
+
+                                      const cardContent = (
+                                        <div className="flex items-start gap-3 sm:gap-4">
+                                          {relatedProject?.cover && (
+                                            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] sm:h-24 sm:w-32">
+                                              <Image
+                                                src={assetPath(relatedProject.cover)}
+                                                alt={usageTitle}
+                                                fill
+                                                sizes="(max-width: 640px) 96px, 128px"
+                                                className="object-cover transition-transform duration-300 group-hover/use:scale-105"
+                                              />
+                                            </div>
+                                          )}
+
+                                          <div className="min-w-0 flex-1">
+                                            <div className="flex items-center justify-between gap-3">
+                                              <div className="flex min-w-0 items-center gap-2">
+                                                {usage.icon &&
+                                                  technologyIcons[usage.icon] && (
+                                                    <span className="flex shrink-0 items-center justify-center">
+                                                      {technologyIcons[usage.icon]}
+                                                    </span>
+                                                  )}
+
+                                                <span
+                                                  className={`text-sm font-semibold ${
+                                                    href
+                                                      ? "group-hover/use:text-[var(--primary)]"
+                                                      : ""
+                                                  }`}
+                                                >
+                                                  {usageTitle}
+                                                </span>
+                                              </div>
+
+                                              {href && (
+                                                <ArrowUpRight
+                                                  size={17}
+                                                  className="shrink-0 text-[var(--muted)] transition group-hover/use:-translate-y-0.5 group-hover/use:translate-x-0.5 group-hover/use:text-[var(--primary)]"
+                                                />
+                                              )}
+                                            </div>
+
+                                            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                                              {usageDescription}
+                                            </p>
+
+                                            {href && (
+                                              <span className="mt-3 inline-block text-xs font-medium text-[var(--primary)]">
+                                                {t("viewProject")} →
+                                              </span>
+                                            )}
+                                          </div>
+                                        </div>
+                                      );
+
+                                      const key = `${usage.id}-${index}`;
+
+                                      return href ? (
+                                        <Link
+                                          key={key}
+                                          href={href}
+                                          className="group/use block rounded-lg border border-[var(--border)] bg-[var(--background)] p-4 transition hover:border-[var(--primary)]"
+                                        >
+                                          {cardContent}
+                                        </Link>
+                                      ) : (
+                                        <div
+                                          key={key}
+                                          className="block rounded-lg border border-[var(--border)] bg-[var(--background)] p-4"
+                                        >
+                                          {cardContent}
+                                        </div>
+                                      );
+                                    }
+                                  )}
+                                </div>
+                              </div>
+                            )}
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>

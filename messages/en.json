@@ -1,0 +1,721 @@
+
+{
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About me",
+    "experience": "Experience",
+    "technologies": "Technologies",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "language": {
+    "switchToEnglish": "Switch to English",
+    "switchToPortuguese": "Switch to Portuguese"
+  },
+  "theme": {
+    "toggle": "Toggle theme"
+  },
+  "hero": {
+    "availability": "Open to junior-level opportunities · Remote | Hybrid | On-site",
+    "greeting": "Hello, I'm",
+    "role": "Junior Full-Stack Developer · React, Next.js & Node.js",
+    "description": {
+      "first": "I have <duration></duration> of professional experience working with SQL databases in production environments, maintaining database structures, writing and optimizing queries, and analyzing data. During this time, I also developed a Python tool to compare electronic invoice access keys across databases, identify missing documents, and detect discrepancies in records.",
+      "second": "Beyond my professional experience, I work on personal software development projects and explore technologies related to Linux and IT infrastructure. I am looking for opportunities to expand my experience in application development, contribute to engineering teams, and build solutions that address real-world problems."
+    },
+    "actions": {
+      "viewProjects": "View projects",
+      "explorePortfolio": "Explore my portfolio"
+    },
+    "social": {
+      "email": "Email"
+    }
+  },
+  "about": {
+    "eyebrow": "Introduction",
+    "title": "About me",
+    "cardTitle": "A little about my journey",
+    "paragraphs": {
+      "introduction": "I'm Jhonathas Souza, a software developer with a degree in <foreground>Systems Analysis and Development</foreground> from Universidade Vila Velha (UVV).",
+      "professional": "I have professional experience as an <accent>IT Support Technician</accent>, working with relational database management, including data modeling, creating <foreground>SQL</foreground> structures, and query optimization. I also provided user support and maintained technology environments.",
+      "development": "In software development, I work with <accent>React, Next.js, Vue.js, TypeScript, and Node.js</accent>, applying these technologies to build web applications, management systems, and personal projects. I also have hands-on experience with <foreground>Linux</foreground> system administration and network infrastructure, using technologies such as <foreground>Armbian, Orange Pi, Pi-hole, and Unbound</foreground>. I also have knowledge of <foreground>NoSQL</foreground> databases.",
+      "goals": "I am looking for opportunities in <accent>software development</accent> where I can contribute my technical skills to building solutions that address real-world problems."
+    }
+  },
+  "duration": {
+    "invalidPeriods": "Please check the registered work periods",
+    "lessThanMonth": "Less than a month",
+    "years": "{count, plural, one {# year} other {# years}}",
+    "months": "{count, plural, one {# month} other {# months}}",
+    "joiner": " and ",
+    "calculating": "Calculating...",
+    "invalidStartDate": "Invalid start date"
+  },
+  "journey": {
+    "eyebrow": "My journey",
+    "title": "Learning and growing.",
+    "study": {
+      "title": "Time spent learning programming",
+      "description": "A journey of learning, experimentation, and development."
+    },
+    "professional": {
+      "title": "Professional experience",
+      "description": "Experience gained in IT support, application development, and database management."
+    },
+    "projectRelated": "Related project:",
+    "highlights": [
+      {
+        "title": "Front-end",
+        "description": "Development of web interfaces and applications using React, Next.js, Vue.js, and TypeScript, with a focus on code organization and user experience.",
+        "project": "Camada",
+        "slug": "camada"
+      },
+      {
+        "title": "Back-end & Databases",
+        "description": "Integration with backend services, authentication, and data management using technologies such as Firebase.",
+        "project": "MiniBlog",
+        "slug": "miniblog"
+      },
+      {
+        "title": "Infrastructure & Linux",
+        "description": "Configuration and administration of Linux environments, network services, and DNS filtering solutions using Orange Pi, Armbian, Pi-hole, and Unbound.",
+        "project": "Orange Pi",
+        "slug": "orange-pi"
+      }
+    ]
+  },
+  "experience": {
+    "eyebrow": "My background",
+    "title": "Education & Experience",
+    "description": "My academic background, professional experience, and additional courses throughout my journey in technology.",
+    "professional": {
+      "label": "Professional experience",
+      "company": "Reneware Negócios e Soluções",
+      "role": "IT Support Technician",
+      "location": "Serra, ES",
+      "periods": [
+        "Feb/2022 – Oct/2022",
+        "Rehired: Jul/2024 – Jul/2026"
+      ],
+      "resultsTitle": "Key Contributions & Achievements",
+      "results": [
+        {
+          "title": "Development of a Python Invoice Comparison Tool",
+          "description": "Developed a Python tool to compare access keys retrieved from clients' databases with invoices registered in the system, covering approximately 2,000 invoices. The solution helped identify missing documents and discrepancies between databases, including invoices with cancellation events that had not yet been correctly reflected in the system."
+        },
+        {
+          "title": "SQL Analysis and Resolution of Data Inconsistencies",
+          "description": "Developed and used SQL queries to cross-reference information, investigate discrepancies in invoices and events, verify document statuses, and support targeted or bulk corrections using filters, JOINs, subqueries, and grouping."
+        },
+        {
+          "title": "Database Structure Maintenance and Automation",
+          "description": "Modified relational database structures, including creating and altering columns, adjusting data types, and maintaining functions and triggers in PostgreSQL. I also implemented an automated routine to populate the NF-e model using its access key."
+        },
+        {
+          "title": "Data Integrity and Migration",
+          "description": "Identified duplicate records and inconsistencies in NF-e, CT-e, and NSU tables, and supported data migration and import processes, including adjustments to sequences, encoding, and data formats across databases."
+        },
+        {
+          "title": "Technical Support and Systems Integration",
+          "description": "Provided hardware, software, network, and database support, investigating communication issues between applications and external services. I also worked with service configuration, connectivity, scheduled tasks, and integrations with tax-related services."
+        }
+      ],
+      "clientsTitle": "Organizations Supported",
+      "clients": [
+        "Rede Gazeta",
+        "Águia Branca",
+        "Transilva"
+      ]
+    },
+    "education": {
+      "label": "Academic background",
+      "degree": "Systems Analysis and Development",
+      "institution": "Universidade Vila Velha (UVV)",
+      "location": "Vila Velha, ES",
+      "period": "Feb/2022 — Aug/2025",
+      "status": "Graduated"
+    },
+    "languages": {
+      "title": "Languages",
+      "english": {
+        "name": "English",
+        "provider": "Cambridge Assessment",
+        "level": "B2"
+      },
+      "french": {
+        "name": "French",
+        "status": "Currently studying",
+        "level": "A2"
+      }
+    },
+    "courses": {
+      "eyebrow": "Professional development",
+      "title": "Additional courses",
+      "topicsLabel": "Topics:",
+      "groups": [
+        {
+          "provider": "Udemy",
+          "period": "2023",
+          "courses": [
+            { "name": "React from Scratch" },
+            { "name": "Docker for Developers" },
+            { "name": "PHP from Zero to Mastery" },
+            { "name": "CSS - The Complete Guide", "topics": "Flexbox, Grid, and Sass" },
+            { "name": "Node.js - The Complete Guide", "topics": "MVC, REST APIs, GraphQL, and Deno" },
+            { "name": "Getting Started with Node.js API Development using TypeScript" },
+            { "name": "Complete API Course with Node.js, Express, MongoDB, and SQL" }
+          ]
+        },
+        {
+          "provider": "Danki Code",
+          "period": "2022",
+          "courses": [
+            { "name": "Web Development" },
+            { "name": "Webmaster" }
+          ]
+        },
+        {
+          "provider": "Prepara Cursos",
+          "period": "2019 — 2021",
+          "courses": [
+            { "name": "Web Designer" },
+            { "name": "Programmer" }
+          ]
+        }
+      ],
+      "featured": {
+        "title": "Oracle Java Foundations - 2026",
+        "description": "Additional training currently underway",
+        "status": "In progress"
+      }
+    }
+  },
+  "projectSection": {
+    "eyebrow": "My work",
+    "title": "Projects",
+    "description": "Some of the projects I've developed, exploring different technologies and putting my skills into practice.",
+    "count": "{count, plural, one {# project} other {# projects}}"
+  },
+  "projectPage": {
+    "backToProjects": "Back to projects",
+    "continueExploring": "Keep exploring",
+    "otherProjects": "Other projects",
+    "otherProjectsDescription": "Discover more projects I've developed throughout my journey."
+  },
+  "projectDetails": {
+    "aboutProject": "About the project",
+    "knowProject": "Discover {name}",
+    "technologies": "Technologies used",
+    "links": "Project links",
+    "repository": "GitHub repository",
+    "access": "Visit project",
+    "category": "Category",
+    "status": "Status"
+  },
+  "projectGallery": {
+    "empty": "Images and videos for this project will be added soon.",
+    "previous": "Previous media",
+    "next": "Next media",
+    "video": "Video",
+    "image": "Image",
+    "videoOf": "Video of {projectName}",
+    "videoPreview": "Video preview of {projectName}",
+    "selectVideo": "Select video {index}",
+    "selectImage": "Select image {index}",
+    "browserUnsupported": "Your browser does not support video playback."
+  },
+  "projectContent": {
+    "camada": {
+      "name": "Camada.",
+      "description": "3D printing price calculator designed to simplify cost calculations, profit margins, and selling prices.",
+      "longDescription": "Camada is a web application developed to help calculate the prices of parts produced with my 3D printers.\n\nThe project was designed to simplify the pricing process by considering filament costs, electricity, printing time, and other factors involved in production.\n\nThe application also includes features for organizing calculations and tracking suggested prices.",
+      "category": "Web Application",
+      "status": "Completed",
+      "coverAlt": "Camada pricing calculator interface",
+      "media": [
+        {
+          "alt": "Camada application demonstration",
+          "title": "Camada demonstration"
+        },
+        {
+          "alt": "Camada homepage"
+        },
+        {
+          "alt": "Camada application dashboard"
+        },
+        {
+          "alt": "Camada pricing calculator"
+        }
+      ]
+    },
+    "comparadorchaves": {
+      "name": "Key Comparison Tool",
+      "description": "Python desktop application for comparing Brazilian electronic invoice (NF-e) access keys across databases and XML files, identifying discrepancies and simplifying tax document verification.",
+      "longDescription": "A Python project developed to automate the verification of electronic invoice (NF-e) access keys by comparing records stored in databases with the keys found in XML files.\n\nThe application allows users to configure connections to different database management systems, select specific tables and columns, and choose directories containing XML files for processing.\n\nDuring the comparison process, the system extracts access keys from XML documents, validates their format, and identifies records found in both sources, keys missing from either the database or the files, and possible duplicates.\n\nThe application also provides connection testing, configuration saving, secure credential storage, and CSV export of comparison results.\n\nDevelopment involved object-oriented programming, MVVM architecture, the Repository Pattern, integration with multiple database systems, XML file processing, and desktop interface development with PySide6.\n\nThe application can be distributed as a standalone Windows executable, allowing it to run without requiring Python to be installed on the computer.",
+      "category": "Software",
+      "status": "Completed",
+      "coverAlt": "Key Comparison Tool application interface",
+      "media": [
+        {
+          "alt": "Key Comparison Tool demonstration",
+          "title": "Key Comparison Tool demonstration"
+        },
+        {
+          "alt": "Key Comparison Tool main screen"
+        },
+        {
+          "alt": "Database connection testing interface"
+        },
+        {
+          "alt": "Connection settings and credential storage"
+        },
+        {
+          "alt": "Access key processing and comparison"
+        },
+        {
+          "alt": "Comparison results between the database and XML files"
+        },
+        {
+          "alt": "Saving the comparison results"
+        }
+      ]
+    },
+    "gerenciador-pacientes": {
+      "name": "Patient Management System",
+      "description": "Web application for managing patient records, featuring CRUD operations and an interface built with Vue.js.",
+      "longDescription": "The Patient Management System is a web application developed with Vue.js to make patient registration and record management easier through an intuitive and functional interface.\n\nThe system supports creating, viewing, updating, and deleting records, providing a practical way to manage patient information. Its interface was designed to deliver a simple and organized user experience.\n\nThe project also demonstrates fundamental front-end development concepts, including components, data management, reactivity, and CRUD operations using JavaScript, Vue.js, and CSS.",
+      "category": "Web Application",
+      "status": "Completed",
+      "coverAlt": "Patient Management System interface",
+      "media": [
+        {
+          "alt": "Patient Management System homepage"
+        },
+        {
+          "alt": "Patient registration interface"
+        },
+        {
+          "alt": "Patient management interface"
+        }
+      ]
+    },
+    "miniblog": {
+      "name": "MiniBlog",
+      "description": "Blog platform built with React, allowing users to create, edit, delete, and search posts. It features user authentication, a rich text editor, and content management integrated with Firebase.",
+      "longDescription": "A project developed with React and Firebase to create an interactive blogging platform where users can share ideas, experiences, and knowledge through posts.\n\nThe application includes user authentication, post management, and a dashboard for organizing created content. It also supports searching posts by title, content, and tags.\n\nThe rich text editor provides formatting features for creating more detailed posts, including support for images and tags.\n\nDevelopment involved state management, React Hooks, Context API, navigation with React Router, and integration with Firebase services.",
+      "category": "Web Application",
+      "status": "Completed",
+      "coverAlt": "MiniBlog homepage interface",
+      "media": [
+        {
+          "alt": "MiniBlog demonstration",
+          "title": "MiniBlog demonstration"
+        },
+        {
+          "alt": "MiniBlog homepage"
+        }
+      ]
+    },
+    "orange-pi": {
+      "name": "Network-wide Ad Blocking & Private DNS Server",
+      "description": "Network infrastructure project using an Orange Pi Zero 3 as a home DNS server, designed to provide a cleaner browsing experience.",
+      "longDescription": "A network infrastructure project using an Orange Pi Zero 3 as a home DNS server, designed to provide cleaner, safer, and more private browsing for all devices connected to the local network. The solution uses Pi-hole to block advertisements, trackers, and unwanted domains at the DNS level, eliminating the need to install blockers individually on each device.\n\nThe infrastructure uses Unbound as a local recursive DNS resolver, allowing queries to be made directly through the DNS hierarchy and reducing dependence on public DNS providers. The server runs on Armbian (Linux), with static network configuration and organized services to maintain availability and continuous operation. The project also includes WireGuard for encrypted VPN connections and Nginx for hosting web services and acting as a reverse proxy, depending on the infrastructure configuration.\n\nIn addition to software implementation and network service configuration, a custom 3D-printed case was designed to house the Orange Pi Zero 3, providing physical protection, component organization, and adequate ventilation. The project brings together Linux administration, computer networking, security, virtual private networks, DNS, and physical prototyping.",
+      "category": "DNS Filtering",
+      "status": "Completed",
+      "coverAlt": "Orange Pi DNS server interface and infrastructure",
+      "media": [
+        {
+          "alt": "Home DNS server interface running on Orange Pi"
+        }
+      ]
+    },
+    "antigo_portfolio": {
+      "name": "Portfolio 2024",
+      "description": "My first personal portfolio project, developed to showcase my front-end and back-end development skills.",
+      "longDescription": "Portfolio 2024 was my first personal portfolio project, developed to showcase my front-end and back-end development skills by bringing projects, experience, and personal work together on a single platform. The application features a React interface, prioritizing content organization, intuitive navigation, and visual project presentation.\n\nOne of its main features is a custom backend built with Node.js and Express, providing a REST API integrated with MongoDB. Through an authentication and content management system, users can create, view, update, and delete projects, making it possible to manage portfolio information without directly modifying the source code.\n\nDevelopment involved REST architecture, state management with Redux Toolkit, data persistence with MongoDB, JWT authentication, and code organization based on development best practices. The project also represents an important stage in my growth as a developer, bringing together programming, interface design, and full application development.",
+      "category": "Web Application",
+      "status": "Completed",
+      "coverAlt": "Portfolio 2024 interface",
+      "media": [
+        {
+          "alt": "Portfolio 2024 homepage"
+        }
+      ]
+    },
+    "portfolio": {
+      "name": "Portfolio",
+      "description": "Personal portfolio built with Next.js, showcasing projects, professional experience, and technical skills through a modern, responsive, and interactive interface.",
+      "longDescription": "A project developed with Next.js, React, and TypeScript to showcase my journey as a developer, bringing together projects, professional experience, and technologies used throughout my career.\n\nThe application features a homepage organized into different sections, as well as individual pages for each project, allowing visitors to explore their features, technologies, images, and demonstrations. It also supports light and dark themes and provides a fully responsive interface.\n\nOne of its key features is the interactive technology section, which allows visitors to see where each tool has been used across the showcased projects. Development focuses on componentization, code reuse, organized architecture, and an intuitive browsing experience.",
+      "category": "Web Application",
+      "status": "Completed",
+      "coverAlt": "Personal portfolio interface built with Next.js",
+      "media": [
+        {
+          "alt": "Portfolio homepage"
+        },
+        {
+          "alt": "Main portfolio section"
+        },
+        {
+          "alt": "Portfolio projects section"
+        }
+      ]
+    },
+    "invest": {
+      "name": "Invest",
+      "description": "Investment tracking and portfolio management platform focused on the Brazilian financial market.",
+      "longDescription": "Invest is an investment tracking and portfolio management platform focused on the Brazilian financial market. Its goal is to centralize information about stocks, real estate investment funds (FIIs), ETFs, and other assets, allowing investors to track their portfolios, check market prices, and monitor investment performance through a modern and intuitive interface.\n\nOne of the platform's main features is its personalized price appreciation alert system. The idea is to allow each user to define percentage targets for their assets and receive notifications when a target is reached, making it easier to monitor potential profit-taking opportunities. The platform also plans to include financial dashboards, portfolio allocation charts, transaction history, and performance indicators.\n\nThe frontend is being developed with Next.js, React, and TypeScript, with a backend architecture based on NestJS. The project involves componentization, interface state management, financial data visualization, integration with external services, and API development, with an architecture prepared for authentication and data persistence.",
+      "category": "Web Application",
+      "status": "In Development",
+      "coverAlt": "Invest platform interface",
+      "media": [
+        {
+          "alt": "Invest platform homepage"
+        }
+      ]
+    },
+    "impostometro": {
+      "name": "Impostômetro",
+      "description": "Platform designed to help consumers understand how much tax they pay when purchasing products in Brazil, providing greater transparency about the taxes included in product prices.",
+      "longDescription": "Impostômetro is a web application designed to make information about taxation in Brazil more accessible. It allows users to search for products and view estimated taxes included in their prices.\n\nThe goal is to provide a clearer picture of how much of consumers' spending goes toward taxes, helping raise awareness of the tax burden present in everyday purchases in Brazil.\n\nThe project is being developed with Next.js, NestJS, MongoDB, Redis, Docker, and Tailwind CSS, combining modern technologies to build an organized, scalable, and user-friendly application.",
+      "category": "Web Application",
+      "status": "In Development",
+      "coverAlt": "Impostômetro platform interface",
+      "media": [
+        {
+          "alt": "Impostômetro platform homepage"
+        }
+      ]
+    }
+  },
+  "techStack": {
+    "eyebrow": "Tools",
+    "title": "Technologies",
+    "description": "Technologies, databases, and tools I use throughout my software development journey.",
+    "whereUsed": "Where I used it",
+    "viewProject": "Explore project",
+    "categories": {
+      "stack": "Stack",
+      "databases": "Databases",
+      "tools": "Tools",
+      "infrastructure": "Systems & Infrastructure"
+    },
+    "items": {
+      "javascript": {
+        "description": "Programming language used to develop interactive web applications, on both the frontend and backend.",
+        "uses": {
+          "patientManagement": {
+            "description": "Used to implement patient registration, lookup, update, and deletion features."
+          }
+        }
+      },
+      "typescript": {
+        "description": "A JavaScript superset that adds static typing, improving code organization, maintainability, and error detection.",
+        "uses": {
+          "camada": {
+            "description": "Used to define types for data structures, calculation parameters, and information handled by the application."
+          }
+        }
+      },
+      "react": {
+        "description": "JavaScript library for building user interfaces with reusable components and state management.",
+        "uses": {
+          "camada": {
+            "description": "Used to build the interface with reusable components and manage the calculator's state."
+          }
+        }
+      },
+      "nextjs": {
+        "description": "React-based framework providing features such as the App Router, server rendering, static generation, and web application optimization.",
+        "uses": {
+          "camada": {
+            "description": "Used as the application's main framework to organize the project structure, routes, and components."
+          }
+        }
+      },
+      "vuejs": {
+        "description": "Progressive JavaScript framework for building user interfaces and web applications with reactive components.",
+        "uses": {
+          "patientManagement": {
+            "description": "Used to build the reactive interface and organize the components responsible for managing patient records."
+          }
+        }
+      },
+      "nestjs": {
+        "description": "Node.js framework for building structured and scalable backend applications, commonly using TypeScript.",
+        "uses": {
+          "invest": {
+            "description": "Currently being used in the platform's backend development, organizing the application into modules and services."
+          }
+        }
+      },
+      "nodejs": {
+        "description": "JavaScript runtime environment that allows applications and services to be developed on the server side.",
+        "uses": {
+          "miniblog": {
+            "description": "Used in MiniBlog's backend development to implement server-side logic, request processing, and Firebase integration for application data storage and management."
+          }
+        }
+      },
+      "html": {
+        "description": "Markup language responsible for structuring the content and elements of web pages."
+      },
+      "tailwindcss": {
+        "description": "Utility-first CSS framework that allows interfaces to be developed directly through HTML or JSX classes.",
+        "uses": {
+          "camada": {
+            "description": "Used to style the interface, build responsive layouts, and customize components."
+          }
+        }
+      },
+      "css": {
+        "description": "Styling language used to define colors, layouts, spacing, animations, and responsive behavior in web pages.",
+        "uses": {
+          "patientManagement": {
+            "description": "Used to style pages, organize interface elements and forms, and build a responsive user interface."
+          }
+        }
+      },
+      "java": {
+        "description": "Object-oriented programming language mainly used to develop robust applications and backend systems.",
+        "uses": {
+          "invest": {
+            "description": "Used in the development of the platform's first API."
+          }
+        }
+      },
+      "python": {
+        "description": "Versatile programming language used for application development, automation, scripting, and data processing.",
+        "uses": {
+          "keyComparison": {
+            "description": "Used to develop small applications and internal tools that supported the company's daily operations."
+          }
+        }
+      },
+      "postgresql": {
+        "description": "Open-source relational database management system known for its robustness and support for advanced SQL features.",
+        "uses": {
+          "professionalExperience": {
+            "title": "Professional experience",
+            "description": "Used PostgreSQL in professional tasks involving relational databases."
+          }
+        }
+      },
+      "mongodb": {
+        "description": "Document-oriented NoSQL database that stores information in flexible, JSON-like structures.",
+        "uses": {
+          "portfolio2024": {
+            "description": "Used MongoDB as the database for developing my 2024 personal portfolio."
+          }
+        }
+      },
+      "firebase": {
+        "description": "Google platform providing application services, including authentication, databases, and hosting.",
+        "uses": {
+          "miniblog": {
+            "description": "Used Firebase as the database for MiniBlog, storing user registration information, posts, and other application data."
+          }
+        }
+      },
+      "mysql": {
+        "description": "Relational database management system widely used in web applications and systems that rely on SQL.",
+        "uses": {
+          "professionalExperience": {
+            "title": "Professional experience",
+            "description": "Used MySQL in professional tasks involving data storage and management."
+          }
+        }
+      },
+      "redis": {
+        "description": "In-memory data structure store commonly used for caching, session management, and fast data processing.",
+        "uses": {
+          "invest": {
+            "description": "Planned for use as part of the platform's data infrastructure."
+          }
+        }
+      },
+      "sqlserver": {
+        "description": "Relational database management system developed by Microsoft and commonly used in enterprise applications.",
+        "uses": {
+          "professionalExperience": {
+            "title": "Professional experience",
+            "description": "Used SQL Server in professional database management tasks, including work involving Águia Branca's database."
+          }
+        }
+      },
+      "oracle": {
+        "description": "Relational database management system primarily used in enterprise environments and large-scale applications.",
+        "uses": {
+          "professionalExperience": {
+            "title": "Professional experience",
+            "description": "Used Oracle Database during my professional experience, providing technical support in large organizations and working with relational databases."
+          }
+        }
+      },
+      "vscode": {
+        "description": "Extensible source code editor with support for multiple programming languages, development tools, and extensions.",
+        "uses": {
+          "webEditor": {
+            "title": "Primary editor for web development",
+            "description": "Used for developing websites and frontend and backend applications."
+          }
+        }
+      },
+      "docker": {
+        "description": "Containerization platform that packages applications and their dependencies into isolated and reproducible environments.",
+        "uses": {
+          "invest": {
+            "description": "Currently being used to manage the environments and services required to run the platform."
+          }
+        }
+      },
+      "github": {
+        "description": "Platform for hosting Git repositories, collaborating with developers, and managing software projects.",
+        "uses": {
+          "patientManagement": {
+            "description": "Used to host the source code and maintain project version control."
+          }
+        }
+      },
+      "gitlab": {
+        "description": "Collaborative development platform providing repository management, continuous integration, and continuous delivery."
+      },
+      "postman": {
+        "description": "Tool used to send, test, and document HTTP requests and APIs.",
+        "uses": {
+          "developmentEnvironment": {
+            "title": "Development environment",
+            "description": "Used on my main computer to send requests and test APIs."
+          }
+        }
+      },
+      "bruno": {
+        "description": "API client used to create, organize, and execute HTTP requests while keeping collections stored locally.",
+        "uses": {
+          "linuxEnvironment": {
+            "title": "Linux environment",
+            "description": "Used on Arch Linux to send requests and test APIs."
+          }
+        }
+      },
+      "figma": {
+        "description": "Interface design and prototyping tool used to create and organize visual experiences.",
+        "uses": {
+          "portfolio": {
+            "description": "Used to plan and develop the layouts and visual identity of my personal portfolio."
+          },
+          "portfolio2024": {
+            "description": "Used to plan and develop the layouts and visual identity of my 2024 personal portfolio."
+          },
+          "patientManagement": {
+            "description": "Used to plan and develop the layouts and visual identity of the Patient Management System."
+          },
+          "miniblog": {
+            "description": "Used to plan and develop the layouts and visual identity of MiniBlog."
+          }
+        }
+      },
+      "intellij": {
+        "description": "JetBrains IDE offering advanced development features, particularly for Java projects and other programming languages.",
+        "uses": {
+          "invest": {
+            "description": "Used IntelliJ IDEA to work with Java during the development of the platform's first API."
+          }
+        }
+      },
+      "aws": {
+        "description": "Amazon's cloud computing platform, offering hosting, storage, database, and infrastructure services.",
+        "uses": {
+          "professionalExperience": {
+            "title": "Professional experience",
+            "description": "Used AWS services during my professional experience."
+          }
+        }
+      },
+      "vercel": {
+        "description": "Web application hosting and deployment platform with GitHub integration and optimizations for frameworks such as Next.js.",
+        "uses": {
+          "patientManagement": {
+            "description": "Used to host and deploy the web application."
+          }
+        }
+      },
+      "linux": {
+        "description": "Open-source operating system known for its stability, security, flexibility, and extensive customization options, widely used on servers, desktops, and development environments.",
+        "uses": {
+          "archLinux": {
+            "title": "Arch Linux",
+            "description": "Independent and highly customizable Linux distribution known for its rolling-release model and philosophy of simplicity and user control. Currently used on my laptop, where I customize and manage my own development environment."
+          },
+          "fedoraServer": {
+            "title": "Fedora Server",
+            "description": "Linux distribution designed for server environments, offering modern technologies for hosting, administration, and service management. Used Fedora Server in 2022 to explore and work with Linux-based server environments."
+          },
+          "debian": {
+            "title": "Debian",
+            "description": "GNU/Linux distribution known for its stability, security, and widespread use on servers and desktop environments. Used Debian as my operating system in 2020."
+          },
+          "linuxMint": {
+            "title": "Linux Mint",
+            "description": "Linux distribution based on Ubuntu and Debian, focused on ease of use, stability, and an accessible desktop experience. Used Linux Mint as my operating system in 2024."
+          }
+        }
+      },
+      "armbian": {
+        "description": "Operating system based on Debian and Ubuntu, optimized for ARM-based single-board computers such as Orange Pi.",
+        "uses": {
+          "orangePi": {
+            "description": "Used as the operating system on the Orange Pi Zero 3, preparing the environment to run network services."
+          }
+        }
+      },
+      "pihole": {
+        "description": "DNS filtering tool that blocks advertisements, trackers, and unwanted domains across the local network.",
+        "uses": {
+          "orangePi": {
+            "description": "Configured to filter DNS traffic across the local network, blocking domains associated with advertisements and trackers."
+          }
+        }
+      },
+      "unbound": {
+        "description": "Recursive DNS resolver and DNSSEC validator used to perform queries directly through the DNS infrastructure.",
+        "uses": {
+          "orangePi": {
+            "description": "Configured as a recursive DNS resolver integrated with Pi-hole to handle DNS queries."
+          }
+        }
+      },
+      "nginx": {
+        "description": "High-performance web server used to host applications, act as a reverse proxy, balance loads, and manage HTTP connections.",
+        "uses": {
+          "orangePi": {
+            "description": "Included in the project's infrastructure configuration for web services and connection management."
+          }
+        }
+      },
+      "wireguard": {
+        "description": "Modern VPN solution that enables the creation of private networks and secure communication tunnels between devices and servers.",
+        "uses": {
+          "orangePi": {
+            "description": "Included in the infrastructure to establish VPN connections and enable private communication between devices."
+          }
+        }
+      }
+    }
+  },
+  "footer": {
+    "developedBy": "Developed by {name}.",
+    "backToTop": "Back to home",
+    "backToTopTitle": "Back to top",
+    "email": "Email"
+  },
+  "notFound": {
+    "eyebrow": "Page not found",
+    "heading": "Looks like you've lost your way.",
+    "description": "The page you're looking for doesn't exist or may have been moved. But don't worry, there's still plenty to explore here.",
+    "backHome": "Back to home",
+    "exploreProjects": "Explore projects",
+    "error": "Error 404 — The destination of this page remains a mystery."
+  }
+}

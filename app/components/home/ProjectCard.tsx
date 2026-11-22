@@ -1,24 +1,37 @@
+
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import type { Project } from "@/app/data/projects";
 import Image from "next/image";
+
+import { ArrowUpRight } from "lucide-react";
+
+import { getLocale, getTranslations } from "next-intl/server";
+
+import type {
+  Project,
+  ProjectContent,
+} from "@/app/data/projects";
+
 import { assetPath } from "@/app/utils/assetPath";
 
 interface ProjectCardProps {
   project: Project;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export async function ProjectCard({ project }: ProjectCardProps) {
+  const locale = await getLocale();
+  const t = await getTranslations("projectContent");
+
+  const content = t.raw(project.slug) as ProjectContent;
+
   return (
     <Link
-      href={`/projetos/${project.slug}`}
+      href={`/${locale}/projetos/${project.slug}/`}
       className="group overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition duration-300 hover:-translate-y-1 hover:border-[var(--primary)]"
     >
       <div className="group/image relative aspect-[16/10] w-full overflow-hidden bg-[var(--surface-hover)]">
-
         <Image
           src={assetPath(project.cover)}
-          alt={project.coverAlt}
+          alt={content.coverAlt}
           fill
           unoptimized
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
@@ -26,18 +39,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
         />
 
         <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-black/60 px-3 py-1 text-xs text-white backdrop-blur-md">
-          {project.category}
+          {content.category}
         </span>
 
         <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white opacity-0 backdrop-blur-md transition group-hover/image:opacity-100">
           <ArrowUpRight size={19} />
         </div>
-
       </div>
+
       <div className="p-6">
         <div className="flex items-center justify-between gap-3">
           <h3 className="text-lg font-semibold transition group-hover:text-[var(--primary)]">
-            {project.name}
+            {content.name}
           </h3>
 
           <ArrowUpRight
@@ -47,7 +60,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <p className="mt-3 min-h-20 text-sm leading-7 text-[var(--muted)]">
-          {project.description}
+          {content.description}
         </p>
 
         <div className="mt-5 flex flex-wrap gap-2">
@@ -63,7 +76,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="mt-6 border-t border-[var(--border)] pt-4">
           <span className="text-xs text-[var(--muted)]">
-            {project.status}
+            {content.status}
           </span>
         </div>
       </div>

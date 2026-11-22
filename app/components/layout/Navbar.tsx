@@ -1,21 +1,25 @@
+
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Code2, Menu, X } from "lucide-react";
 
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ScrollLink } from "./ScrollLink";
 
 const navItems = [
-  { label: "Início", href: "#inicio" },
-  { label: "Projetos", href: "#projetos" },
-  { label: "Sobre mim", href: "#sobre" },
-  { label: "Experiência", href: "#formacao" },
-  { label: "Tecnologias", href: "#tecnologias" },
+  { key: "home", href: "#inicio" },
+  { key: "projects", href: "#projetos" },
+  { key: "about", href: "#sobre" },
+  { key: "experience", href: "#formacao" },
+  { key: "technologies", href: "#tecnologias" },
 ] as const;
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const t = useTranslations("navigation");
 
   function closeMenu() {
     setMenuOpen(false);
@@ -25,7 +29,6 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-5">
         <div className="flex items-center justify-between gap-4 py-3">
-
           <ScrollLink
             href="#inicio"
             onClick={closeMenu}
@@ -46,18 +49,20 @@ export function Navbar() {
                   href={item.href}
                   className="transition hover:text-[var(--primary)]"
                 >
-                  {item.label}
+                  {t(item.key)}
                 </ScrollLink>
               ))}
             </nav>
 
             <div className="flex items-center gap-2">
+              <LanguageSwitcher />
+
               <ThemeToggle />
 
               <button
                 type="button"
                 onClick={() => setMenuOpen((current) => !current)}
-                aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+                aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
                 aria-expanded={menuOpen}
                 aria-controls="mobile-navigation"
                 className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] transition hover:bg-[var(--surface-hover)] md:hidden"
@@ -65,7 +70,6 @@ export function Navbar() {
                 {menuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
             </div>
-
           </div>
         </div>
 
@@ -80,7 +84,6 @@ export function Navbar() {
         >
           <div className="min-h-0 overflow-hidden">
             <nav className="flex flex-col gap-1 border-t border-[var(--border)] py-3">
-
               {navItems.map((item) => (
                 <ScrollLink
                   key={item.href}
@@ -89,7 +92,7 @@ export function Navbar() {
                   onClick={closeMenu}
                   className="rounded-lg px-4 py-3 text-sm text-[var(--muted)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--primary)]"
                 >
-                  {item.label}
+                  {t(item.key)}
                 </ScrollLink>
               ))}
             </nav>
