@@ -41,6 +41,8 @@ jobs:
 
       - name: Build Next.js
         run: yarn build
+        env:
+            KEYCLARITY: ${{ vars.KEYCLARITY }}
 
       - name: Upload static files
         uses: actions/upload-pages-artifact@v5
