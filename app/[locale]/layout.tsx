@@ -16,6 +16,7 @@ import { routing } from "@/i18n/routing";
 import { ScrollTarget } from "@/app/components/layout/ScrollTarget";
 import { Navbar } from "@/app/components/layout/Navbar";
 import { Footer } from "@/app/components/layout/Footer";
+import Clarity from "@/app/components/Clarity";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
       <ScrollTarget />
       <Navbar />
       {children}
+      <Clarity />
       <Footer />
     </NextIntlClientProvider>
   );
