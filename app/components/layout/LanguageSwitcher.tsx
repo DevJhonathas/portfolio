@@ -15,7 +15,7 @@ export function LanguageSwitcher() {
   const pathname = usePathname();
   const t = useTranslations("language");
 
-  const nextLocale: Locale = locale === "pt" ? "en" : "pt";
+ const nextLocale: Locale = locale.startsWith("pt") ? "en" : "pt";
 
   const segments = pathname.split("/").filter(Boolean);
 
