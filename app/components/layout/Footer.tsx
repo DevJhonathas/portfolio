@@ -16,6 +16,7 @@ import { profile } from "@/app/data/profile";
 
 import { ScrollLink } from "./ScrollLink";
 import { CurrentYear } from "./CurrentYear";
+import { trackClarityEvent } from "@/app/lib/clarity";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -63,6 +64,11 @@ export function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-2">
           {socialLinks.map((item) => (
             <a
+              onClick={() =>
+                trackClarityEvent(
+                  `footer_clicked_${item.name.replace(/-/g, "_")}`
+                )
+              }
               key={item.name}
               href={item.href}
               target={item.external ? "_blank" : undefined}

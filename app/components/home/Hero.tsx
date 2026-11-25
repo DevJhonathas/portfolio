@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 
 import { profile } from "@/app/data/profile";
+import { trackClarityEvent } from "@/app/lib/clarity";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -95,6 +96,11 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-2">
               {socialLinks.map((item) => (
                 <a
+                  onClick={() =>
+                    trackClarityEvent(
+                      `hero_clicked_${item.name.replace(/-/g, "_")}`
+                    )
+                  }
                   key={item.name}
                   href={item.href}
                   target={item.external ? "_blank" : undefined}

@@ -1,5 +1,4 @@
-
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 
 import { ArrowUpRight } from "lucide-react";
@@ -12,6 +11,7 @@ import type {
 } from "@/app/data/projects";
 
 import { assetPath } from "@/app/utils/assetPath";
+import TrackedProjectLink from "../buttons/TrackedProjectLink";
 
 interface ProjectCardProps {
   project: Project;
@@ -24,8 +24,9 @@ export async function ProjectCard({ project }: ProjectCardProps) {
   const content = t.raw(project.slug) as ProjectContent;
 
   return (
-    <Link
+    <TrackedProjectLink
       href={`/${locale}/projetos/${project.slug}/`}
+      eventName={`project_clicked_${project.slug.replace(/-/g, "_")}`}
       className="group overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition duration-300 hover:-translate-y-1 hover:border-[var(--primary)]"
     >
       <div className="group/image relative aspect-[16/10] w-full overflow-hidden bg-[var(--surface-hover)]">
@@ -80,6 +81,6 @@ export async function ProjectCard({ project }: ProjectCardProps) {
           </span>
         </div>
       </div>
-    </Link>
+    </TrackedProjectLink>
   );
 }
